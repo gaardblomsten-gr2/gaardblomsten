@@ -1,5 +1,53 @@
 /* her er vores generelle style  */
 
-/* herunder er vores variables */
+/* herunder defineres vores variables */
+/* variables for fonte */
+:root {
+  --font-p: "Afacad", sans-serif;
+  --font-heading: "Libre Bodoni", serif;
+}
+/* variables for farver */
+:root {
+  --beige: #f2efe8;
+  --darkgreen: #1e3006;
+  --mediumgreen: #70886b;
+  --lightgreen: #abc1a6;
+  --rosa: #c79897;
+  --grey: #7d7d7d;
+  --lightgrey: #afaeab;
+  --lightbeige: #faf9f5;
+}
 
-/* herunder er vores font */
+/* brug af viaribalerne til fonte  */
+p {
+  font-family: var(--font-p);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+/* font bodoni libre */
+.libre-bodoni {
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* font afacad */
+.afacad {
+  font-family: "Afacad", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* font oooh baby */
+.oooh-baby-regular {
+  font-family: "Oooh Baby", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
