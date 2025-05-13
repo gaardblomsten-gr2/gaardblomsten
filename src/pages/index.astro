@@ -1,14 +1,9 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
 </Layout>
 
 <!DOCTYPE html>
@@ -16,12 +11,56 @@ import Layout from '../layouts/Layout.astro';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Velkommen til Gaardblomsten</title>
 </head>
 <body>
-    <h1>hej dette er h1</h1>
-	<h2>hej dette er h2</h2>
-	<h3>dette er h3</h3>
-<p>dette re en paragrfa dvhfbvhfbhjfbr f</p>
+<header></header>
+
+<main>
+    <section class="hero">
+        <!-- her skal der indsættes en hero video -->
+    </section>
+    <h1>Velkommen til Gaardblomsten </h1>
+
+    <!-- herunder er billeder med links videre -->
+    <section>
+        <div class="grid_1-1-1">
+            <div>
+            <a href="/blomster">
+<img src="" alt="">
+<h2>Blomster</h2>
+            </a>
+            </div>
+            <div>
+            <a href="/abonnement">
+<img src="" alt="">
+<h2>Abonnement</h2>
+            </a>
+            </div>
+            <div>
+            <a href="/workshop">
+<img src="" alt="">
+<h2>Workshop</h2>
+            </a>
+            </div>
+        </div>
+    </section>
+
+<!-- herunder kommer 'Om Gaardblomsten' -->
+    <div class="grid_1-1">
+
+        <div>
+            <h3>Om Gaardblomsten</h3>
+            <p>Bag Gaardblomsten finder du Maria og Henning. Vi bor på gården Højstrup sammen med vores tre børn og hund. På gården ligger vores blomstermark og vejbod. Vi er et stærkt team, og sammen får vi det hele til at rulle på gården. Vi er 4. generation på gården efter Marias familie med dybe rødder i landbruget. Der har i mange år været dyrket landbrug fra gården og nu har vi også specialiseret os i dyrkning af blomster og græskar.</p>
+        </div>
+        <img src="" alt="billede af Maria i blomstermarken">
+    </div>
+	
+    <!-- her indsættes nyhedsbrev -->
+
+</main>
+
+<footer></footer>
+    
 </body>
 </html>
