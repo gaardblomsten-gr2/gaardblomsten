@@ -2,19 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<!doctype html>
-<html lang="da">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <Layout />
-  <body>
-    <main>
-      <header></header>
-      <div class="green grid_1-1">
-        <img src="" alt="billede her" />
+<title>Blomster</title>
+<Layout>
+  <main>
+    <header>header element her</header>
+    <div class="green grid_1-1">
+      <img src="src/assets/img/blomster1.png" alt="billede her" />
+      <div class="bestilling">
         <h1>Bestilling af blomster</h1>
         <p>
           Hos os kan du bestille håndbundne buketter, lavet med blomster og
@@ -34,61 +28,102 @@ import Layout from "../layouts/Layout.astro";
           Vi aftaler tidspunkt for afhentning eller levering, når du skriver.
         </p>
       </div>
+    </div>
 
-      <div class="gallery">
-        <h2>Sæsonens favoritter</h2>
-        <div class="grid_1-1-1">
-          <img src="" alt="billede karussel" />
-          <img src="" alt="billede karussel" />
-          <img src="" alt="billede karussel" />
-        </div>
+    <div class="gallery">
+      <h2>Sæsonens favoritter</h2>
+      <div class="flex">
+        <img
+          class="img_fotokarrusel"
+          src="src/assets/img/hjem1.png"
+          alt="billede1"
+        />
+        <img
+          class="img_fotokarrusel"
+          src="src/assets/img/hjem1.png"
+          alt="billede2"
+        />
+        <img
+          class="img_fotokarrusel"
+          src="src/assets/img/hjem1.png"
+          alt="billede3"
+        />
+        <img
+          class="img_fotokarrusel"
+          src="src/assets/img/hjem1.png"
+          alt="billede4"
+        />
+        <img
+          class="img_fotokarrusel"
+          src="src/assets/img/hjem1.png"
+          alt="billede5"
+        />
       </div>
+    </div>
 
-      <div class="grid_1-1">
-        <div>
-          <h1>Gaardblomstens vejbod</h1>
-          <p>
-            I vores lille vejbod ved gården kan du finde friske, håndbundne
-            buketter og blomsterbundter, alt sammen dyrket med kærlighed lige
-            her på marken. Sæsonen begynder med smukke tulipaner i april, og som
-            sommeren skrider frem, fyldes boden med farverige buketter og
-            blomster som solsikker, dahlia og chrysantemum.
-          </p>
-          <p>
-            Buketterne er pakket pænt ind, perfekte som en værtindegave eller
-            bare lidt hverdagsglæde. Vejboden er selvbetjent, nem at få øje på
-            fra vejen og med parkering lige ved siden af, så du let kan svinge
-            forbi.
-          </p>
-          <strong><p>Praktisk info:</p></strong>
-          <ul>
-            <li>Betaling med MobilePay</li>
-            <li>Åben fra april til september*</li>
-            <li>Hverdage kl. 10–17 & Lørdag-søndag kl. 09–16</li>
-            <li>Skolevej 67, 4622 Havdrup</li>
-          </ul>
-          <p>
-            *Vejboden følger naturens rytme, så åbningstiderne kan variere i
-            takt med vejret og blomstersæsonen. Følg med her på siden eller på
-            vores Facebook og Instagram @gaardblomsten, hvor vi løbende
-            opdaterer.
-          </p>
-        </div>
-        <img src="" alt="" />
+    <div class="grid_1-1">
+      <div>
+        <h1>Gaardblomstens vejbod</h1>
+        <p>
+          I vores lille vejbod ved gården kan du finde friske, håndbundne
+          buketter og blomsterbundter, alt sammen dyrket med kærlighed lige her
+          på marken. Sæsonen begynder med smukke tulipaner i april, og som
+          sommeren skrider frem, fyldes boden med farverige buketter og blomster
+          som solsikker, dahlia og chrysantemum.
+        </p>
+        <p>
+          Buketterne er pakket pænt ind, perfekte som en værtindegave eller bare
+          lidt hverdagsglæde. Vejboden er selvbetjent, nem at få øje på fra
+          vejen og med parkering lige ved siden af, så du let kan svinge forbi.
+        </p>
+        <strong><p>Praktisk info:</p></strong>
+        <ul>
+          <li>Betaling med MobilePay</li>
+          <li>Åben fra april til september*</li>
+          <li>Hverdage kl. 10–17 & Lørdag-søndag kl. 09–16</li>
+          <li>Skolevej 67, 4622 Havdrup</li>
+        </ul>
+        <p>
+          *Vejboden følger naturens rytme, så åbningstiderne kan variere i takt
+          med vejret og blomstersæsonen. Følg med her på siden eller på vores
+          Facebook og Instagram @gaardblomsten, hvor vi løbende opdaterer.
+        </p>
       </div>
-
-      <footer></footer>
-    </main>
-  </body>
-</html>
-
+      <img src="src/assets/img/hjem1.png" alt="" />
+    </div>
+  </main>
+</Layout>
 <style>
-  /* for mobil */
+  /* for mobil og generel */
+  /* 
   .grid_1-1 {
     display: block;
-  }
-  .green {
+  } */
+
+  /* for at få teksten under billedet */
+  /* .green {
     background-color: var(--mediumgreen);
+  } */
+
+  /* under er centrering af h1, h2 og h3 */
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+  /* foto karrusel */
+  .flex {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-left: 20px;
+  }
+  /* styling af fotos til foto karrusel til mobil */
+  .img_fotokarrusel {
+    width: 224px;
+    height: 298px;
+    object-fit: cover;
   }
 
   /* for desktop */
@@ -97,9 +132,19 @@ import Layout from "../layouts/Layout.astro";
       display: grid;
       grid-template-columns: 1fr, 1fr;
     }
-  }
+    .bestilling {
+      grid-column: 2 / 3;
+    }
+    */
+    /* img {
+      width: auto;
+    }
 
-  li {
-    text-decoration: none;
+    /* styling af fotos til foto karrusel til mobil */
+    .img_fotokarrusel {
+      width: 298px;
+      height: 349px;
+      object-fit: cover;
+    }
   }
 </style>
