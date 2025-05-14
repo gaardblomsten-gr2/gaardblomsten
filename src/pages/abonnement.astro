@@ -1,60 +1,102 @@
-<!DOCTYPE html>
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout />
+
 <html lang="da">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abonnement</title>
-</head>
-<body>
+  </head>
+  <body>
     <header></header>
     <main>
-        <section class="hero">
-            <p></p>
-            <a href=""></a>
-        </section>
-        <section>
-            <h1>Sådan fungerer det</h1>
-            <p></p>
-            <div class="grid_1-1-1">
-                <h2>Vælg leveringsform</h2>
-                <p>Gratis levering i 4622 Havdrup og 2680 Solrød Strand. Øvrige postnumre mod tillæg. Gratis afhentning muligt på Gaardblomsten i Gammel Havdrup hver tirsdag.</p>
-                <h2>Vælg abonnement</h2>
-                <p>Nyd friske blomster hver uge. Ingen buketter er ens, men afhænger af måneden.
-                    Vælg mellem:
-                    4 uger - 700 kr.
-                    6 uger - 1050 kr.</p>
-                <h2>Send formular</h2>
-                <p>Glæd dig til en modtage en unik blomsterbuket hver tirsdag i den abonnements-periode du vælger. Vi er glade på Gaardblomstens for I er en del af noget særligt - hver dag.</p>
-            </div>
-        </section>
-        <section>
-            <h2>Start dit abonnement og udfyld formularen</h2>
-            <div class="form">
-                <input type="text" id="name" name="name" placeholder="Dit navn">
-                <input type="text" id="adresse" name="adresse" placeholder="Adresse">
-                <select name="valg" id="valg">
-                <option value="">Vælg leveringsform</option>
-                <option value="4 uger">Afhentning</option>
-                <option value="6 uger">Levering</option>
-            </select>
-            <select name="valg" id="valg">
-                <option value="">Vælg abonnementslængde</option>
-                <option value="4 uger">4 uger - 700 kr.</option>
-                <option value="6 uger">6 uger - 1050 kr.</option>
-            </select>
-            <input type="text" id="andet" name="andet" placeholder="Andet">
-            <a href=""></a>
-            </div>
-        </section>
-        <div class="grid_1-1">
-            <div>
-                <h2>Et abonnement hos Gaardblomsten</h2>
-                <p>Fra juli til august kan du få glæden af friske, håndbundne buketter hver uge med vores blomsterabonnement. Alle blomster er dyrket her på marken, bliver nænsomt høstet og bundet med et personligt præg, før de lander hos dig.</p>
-                <p>Hver buket er unik, sammensat af det, marken byder på netop den uge. Da vi dyrker alle blomster på friland og følger naturens rytme, er det vejret, der bestemmer, hvornår de er klar. Til gengæld kan vi love dig noget særligt: buketter, der er dugfriske, duftende og helt vores egne.</p>
-            </div>
-            <img src="" alt="">
+      <section class="hero">
+        <p></p>
+        <a href=""></a>
+      </section>
+      <section>
+        <h1>Sådan fungerer det</h1>
+        <p>
+          OBS: Da blomsterne kommer fra egen gård, er abonnementer kun mulige
+          fra juli til august
+        </p>
+        <div class="grid_1-1-1">
+          <h2>Vælg leveringsform</h2>
+          <p>
+            Gratis levering i 4622 Havdrup og 2680 Solrød Strand. Øvrige
+            postnumre mod tillæg. Gratis afhentning muligt på Gaardblomsten i
+            Gammel Havdrup hver tirsdag.
+          </p>
+          <h2>Vælg abonnement</h2>
+          <p>
+            Nyd friske blomster hver uge. Ingen buketter er ens, men afhænger af
+            måneden. Vælg mellem: 4 uger - 700 kr. 6 uger - 1050 kr.
+          </p>
+          <h2>Send formular</h2>
+          <p>
+            Glæd dig til en modtage en unik blomsterbuket hver tirsdag i den
+            abonnements-periode du vælger. Vi er glade på Gaardblomstens for I
+            er en del af noget særligt - hver dag.
+          </p>
         </div>
-        <footer></footer>
+      </section>
+      <section class="section_lightgreen">
+        <h2>Start dit abonnement og udfyld formularen</h2>
+        <div class="form">
+          <input type="text" id="name" name="name" placeholder="Dit navn" />
+          <input
+            type="text"
+            id="adresse"
+            name="adresse"
+            placeholder="Adresse"
+          />
+          <select name="valg" id="valg">
+            <option value="">Vælg leveringsform</option>
+            <option value="4 uger">Afhentning</option>
+            <option value="6 uger">Levering</option>
+          </select>
+          <select name="valg" id="valg">
+            <option value="">Vælg abonnementslængde</option>
+            <option value="4 uger">4 uger - 700 kr.</option>
+            <option value="6 uger">6 uger - 1050 kr.</option>
+          </select>
+          <input type="text" id="andet" name="andet" placeholder="Andet" />
+          <a href=""></a>
+        </div>
+      </section>
+      <div class="grid_1-1">
+        <div>
+          <h2>Et abonnement hos Gaardblomsten</h2>
+          <p>
+            Fra juli til august kan du få glæden af friske, håndbundne buketter
+            hver uge med vores blomsterabonnement. Alle blomster er dyrket her
+            på marken, bliver nænsomt høstet og bundet med et personligt præg,
+            før de lander hos dig.
+          </p>
+          <p>
+            Hver buket er unik, sammensat af det, marken byder på netop den uge.
+            Da vi dyrker alle blomster på friland og følger naturens rytme, er
+            det vejret, der bestemmer, hvornår de er klar. Til gengæld kan vi
+            love dig noget særligt: buketter, der er dugfriske, duftende og helt
+            vores egne.
+          </p>
+        </div>
+        <img src="" alt="" />
+      </div>
+      <footer></footer>
     </main>
-</body>
+  </body>
 </html>
+
+<style>
+  .section_lightgreen {
+    background-color: var(--lightgreen);
+  }
+
+  .grid_1-1 {
+    background-color: var(--mediumgreen);
+  }
+</style>
