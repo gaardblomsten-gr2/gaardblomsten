@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
   <body>
     <main>
       <header></header>
-      <div class="grid_1-1">
+      <div class="green grid_1-1">
         <img src="" alt="billede her" />
         <h1>Bestilling af blomster</h1>
         <p>
@@ -35,8 +35,8 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </div>
 
-      <div class="galley">
-        <h2>Gaardblomstens vejbod</h2>
+      <div class="gallery">
+        <h2>Sæsonens favoritter</h2>
         <div class="grid_1-1-1">
           <img src="" alt="billede karussel" />
           <img src="" alt="billede karussel" />
@@ -46,7 +46,7 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="grid_1-1">
         <div>
-          <h1></h1>
+          <h1>Gaardblomstens vejbod</h1>
           <p>
             I vores lille vejbod ved gården kan du finde friske, håndbundne
             buketter og blomsterbundter, alt sammen dyrket med kærlighed lige
@@ -81,3 +81,25 @@ import Layout from "../layouts/Layout.astro";
     </main>
   </body>
 </html>
+
+<style>
+  /* for mobil */
+  .grid_1-1 {
+    display: block;
+  }
+  .green {
+    background-color: var(--mediumgreen);
+  }
+
+  /* for desktop */
+  @media (min-width: 800px) {
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr, 1fr;
+    }
+  }
+
+  li {
+    text-decoration: none;
+  }
+</style>
