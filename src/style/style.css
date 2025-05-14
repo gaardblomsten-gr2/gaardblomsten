@@ -20,15 +20,31 @@
   --lightbeige: #faf9f5;
 }
 
-/* brug af viaribalerne til fonte  */
+/* variabler for font størrelser */
+:root {
+  --fontsize-h1: 60px;
+  --fontsize-h4: 30px;
+  --fontsize-p: 16px;
+}
+
+/* brug af viariablerne til fonte  */
 p {
   font-family: var(--font-p);
+  font-size: var(--fontsize-p);
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--font-heading);
+}
+
+/* brug af viablerne til størrelser */
+h1 {
+  font-size: var(--fontsize-h1);
+}
+h4 {
+  font-size: var(--fontsize-h4);
 }
 
 /* font bodoni libre */
