@@ -1,0 +1,215 @@
+---
+// @ts-nocheck
+import "../style/style.css";
+---
+
+<header>
+  <nav>
+    <p class="burger-logo">Gaardblomsten</p>
+
+    <ul class="menu">
+
+      <li><a class="hover" href="/">Hjem</a></li>
+      <li><a class="hover" href="/blomster">Blomster</a></li>
+      <li><a class="gaardblomsten-center" href="">Gaardblomsten</a></li>
+      <li><a class="hover" href="/workshop">Workshop</a></li>
+      <li><a class="hover" href="/abonnement">Abonnement</a></li>
+    </ul>
+
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+  <section>
+    <p>Åbningstider: Mandag-Fredag 10-17 & Lørdag-søndag 9-16</p>
+    <p>Telefon Nummer: +45 12 34 56 78</p>
+  </section>
+</header>
+
+<style>
+  /* vic tilføjet styling */
+  .gaardblomsten-center {
+    font-family: "Oooh Baby", cursive;
+    font-size: 40px;
+  }
+  /* ------------------------ */
+
+  .burger-logo {
+    display: none;
+    color: var(--darkgreen);
+    font-family: "Oooh Baby", cursive;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center; /* Centrerer indholdet horisontalt */
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+  }
+
+  /* .gaardblomsten {
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+  } */
+
+  li {
+    text-align: center;
+  }
+
+ 
+  a {
+    text-decoration: none;
+    color: var(--darkgreen);
+    font-family: var(--font-heading);
+    font-size: 20px;
+  }
+
+  .hover:hover {
+    color: var(--lightgreen);
+    text-decoration: underline;
+  }
+
+
+
+  /* dette er til det grønne banner */
+  p {
+    color: var(--beige);
+    text-align: center;
+    line-height: 10px;
+  }
+
+  section {
+    background-color: var(--darkgreen);
+    margin-top: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  section p{
+    line-height: 0px;
+  }
+  @media (min-width: 800px) {
+    section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+    }
+  }
+
+
+  /* slut grønne banner styling*/
+
+  .burger {
+    margin-top: 15px;
+    margin-right: 10px;
+    width: 30px;
+    height: 10px;
+    cursor: pointer;
+    margin-left: auto; /* Flytter burger-menuen til højre */
+  }
+
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--darkgreen);
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+  }
+  .burger {
+    display: none;
+  }
+
+  @media (max-width: 800px) {
+    .gaardblomsten-center {
+      display: none;
+    }
+
+    .burger-logo {
+        display: block;
+        position: relative;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 800px) {
+    .menu {
+      display: none;
+    }
+
+    .burger {
+      display: block;
+    }
+
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
+
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+    }
+
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    }
+
+    nav.active .menu {
+      display: block;
+      background-color: var(--beige);
+      position: absolute;
+      top: 91px;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      padding-top: 30%;
+    }
+
+    nav.active .menu li {
+      margin: 10px 20px;
+      right: 30%;
+    }
+
+    nav.active .menu a {
+      font-size: 37px;
+    }
+  }
+</style>
+
+<script>
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+  const menu = document.querySelector(".menu");
+
+  burger.addEventListener("click", burgerClick);
+  function burgerClick() {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+  }
+  menu.addEventListener("click", menuClick);
+  function menuClick() {
+    burger.classList.remove("active");
+    nav.classList.remove("active");
+  }
+</script>
