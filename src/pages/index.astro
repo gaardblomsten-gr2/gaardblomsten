@@ -1,73 +1,199 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-</Layout>
-
-<!DOCTYPE html>
-<html lang="da">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velkommen til Gaardblomsten</title>
-</head>
-<body>
-<header></header>
-
-<main>
+  <main>
     <section class="hero">
-        <!-- her skal der indsættes en hero video -->
+      <!-- her skal der indsættes en hero video -->
     </section>
-    <h1>Velkommen til Gaardblomsten </h1>
+    <h1>Velkommen til <span>Gaardblomsten</span></h1>
 
     <!-- herunder er billeder med links videre -->
     <section>
-        <div class="grid_1-1-1">
-            <div>
-            <a href="/blomster">
-<img src="" alt="">
-<h2>Blomster</h2>
-            </a>
-            </div>
-            <div>
-            <a href="/abonnement">
-<img src="" alt="">
-<h2>Abonnement</h2>
-            </a>
-            </div>
-            <div>
-            <a href="/workshop">
-<img src="" alt="">
-<h2>Workshop</h2>
-            </a>
-            </div>
+      <div class="grid_1-1-1">
+        <div>
+          <a href="/blomster">
+            <img src="/src/assets/img/hjem1.png" alt="" />
+            <h2>Blomster</h2>
+          </a>
         </div>
+        <div>
+          <a href="/abonnement">
+            <img src="/src/assets/img/hjem1.png" alt="" />
+            <h2>Abonnement</h2>
+          </a>
+        </div>
+        <div>
+          <a href="/workshop">
+            <img src="/src/assets/img/hjem1.png" alt="" />
+            <h2>Workshop</h2>
+          </a>
+        </div>
+      </div>
     </section>
 
-<!-- herunder kommer 'Om Gaardblomsten' -->
+    <!-- herunder kommer 'Om Gaardblomsten' -->
     <div class="grid_1-1">
-
-        <div>
-            <h3>Om Gaardblomsten</h3>
-            <p>Bag Gaardblomsten finder du Maria og Henning. Vi bor på gården Højstrup sammen med vores tre børn og hund. På gården ligger vores blomstermark og vejbod. Vi er et stærkt team, og sammen får vi det hele til at rulle på gården. Vi er 4. generation på gården efter Marias familie med dybe rødder i landbruget. Der har i mange år været dyrket landbrug fra gården og nu har vi også specialiseret os i dyrkning af blomster og græskar.</p>
-        </div>
-        <img src="" alt="billede af Maria i blomstermarken">
+      <img
+        src="/src/assets/img/hjem2.png"
+        alt="billede af Maria i blomstermarken"
+        class="maria"
+      />
+      <div>
+        <h3>Om <span>Gaardblomsten</span></h3>
+        <p>
+          Bag Gaardblomsten finder du Maria og Henning. Vi bor på gården
+          Højstrup sammen med vores tre børn og hund. På gården ligger vores
+          blomstermark og vejbod. Vi er et stærkt team, og sammen får vi det
+          hele til at rulle på gården. Vi er 4. generation på gården efter
+          Marias familie med dybe rødder i landbruget. Der har i mange år været
+          dyrket landbrug fra gården og nu har vi også specialiseret os i
+          dyrkning af blomster og græskar.
+        </p>
+      </div>
     </div>
-	
-    <!-- her indsættes nyhedsbrev -->
-
-</main>
-
-<footer></footer>
-    
-</body>
-</html>
-
+  </main>
+</Layout>
 
 <style>
-    .grid_1-1{
-        background-color:var(--lightgreen);
+  /* v--------------  STYLING AF 3 BILLEDE-LINKS --------------v */
+  .grid_1-1-1 {
+    display: grid;
+    grid-auto-rows: 450px;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* overstående linje 'grid-template-colums' er så det tilpasser sig skærmen og ikke ser mystisk ud på tablet view */
+  }
+
+  .grid_1-1-1 > div {
+    text-align: center;
+  }
+  /* sætter tekst er i midten */
+  a {
+    text-align: center;
+    text-decoration: none;
+  }
+
+  img {
+    justify-content: center;
+  }
+
+  /* v--------------  STYLING AF 'om Gaardblomsten'--------------v */
+  .grid_1-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: var(--lightgreen);
+  }
+  .grid_1-1 > .maria {
+    width: 100vw;
+    max-width: none;
+    object-fit: cover;
+    display: block;
+  }
+  /* overstående '.grid_1-1 > .maria' styling gør at billedet går helt ud til kanterne på mobilview  */
+  p,
+  h3,
+  h1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media (min-width: 820px) {
+    .grid_1-1 {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      background-color: var(--lightgreen);
     }
+
+    .grid_1-1 > .maria {
+      /* width: 50vw; fylder halvdelen af skærmen */
+      height: auto;
+      object-fit: cover;
+      margin-left: 0;
+      width: 100%;
+      max-width: none;
+      display: block;
+    }
+
+    .grid_1-1 > div {
+      max-width: 50%; /* halvdelen af din main */
+    }
+
+    .grid_1-1 {
+      flex-direction: row;
+    }
+
+    .grid_1-1 > .maria {
+      order: 2;
+    }
+    /* dette gør billedet bliver flyttet til højre side på desktop */
+
+    .grid_1-1 > div {
+      order: 1;
+    }
+    /* dette gør teksten bliver flyttet til venstre side på desktop */
+
+    p,
+    h3 {
+      padding-left: 80px;
+      padding-right: 20px;
+    }
+  }
+
+  .grid_1-1 {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    background-color: var(--lightgreen);
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  a {
+    color: var(--darkgreen);
+  }
+
+  /* v-------------- STYLING AF FONTS --------------v */
+  h1 {
+    text-align: center;
+  }
+  span {
+    font-family: "Oooh Baby", cursive;
+    font-weight: lighter;
+  }
+  h3 {
+    font-size: 40px;
+  }
+
+  p {
+    padding-bottom: 20px;
+  }
+
+  /* v-------------- HOVER EFFEKT PÅ LINKS --------------v */
+  a {
+    display: block;
+    overflow: hidden; /* skjul det forstørrede billede */
+  }
+
+  a img {
+    transition: transform 0.3s ease;
+  }
+
+  a:hover img {
+    transform: scale(1.05); /* zoomer 5% ind */
+  }
+
+  /* _sleet */
+  body {
+    background-color: var(--beige);
+  }
 </style>
