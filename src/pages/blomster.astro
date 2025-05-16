@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+// @ts-nocheck
 ---
 
 <title>Blomster</title>
@@ -104,6 +105,12 @@ import Layout from "../layouts/Layout.astro";
   </main>
 </Layout>
 <style>
+  /* css reset */
+  * {
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+  }
   /* for mobil og generel */
 
   /* .grid_1-1 styling gør at billedet går helt ud til kanterne på mobilview  */
@@ -125,11 +132,15 @@ import Layout from "../layouts/Layout.astro";
   }
   /* padding for h1 top */
   h1 {
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+  p {
+    padding-bottom: 20px;
   }
 
-  /* baggrundsfarve */
-  main {
+  /* baggrundsfarve på hele siden*/
+  body {
     background-color: var(--beige);
   }
   /* al teskt darkgreen */
@@ -176,9 +187,7 @@ import Layout from "../layouts/Layout.astro";
   .lightgreen {
     background-color: var(--lightgreen);
   }
-  h1 {
-    font-size: 2rem;
-  }
+
   img {
     width: 100%;
     height: auto;
@@ -263,5 +272,24 @@ import Layout from "../layouts/Layout.astro";
       padding-left: 70px;
       padding-right: 50px;
     }
+    p {
+      padding-bottom: 10px;
+    }
   }
+  /*********************************************** FOR TABLET *****************************************************/
+  /* @media (min-width: 600px) and (max-width: 899px) {
+    .grid_1-1 img,
+    .bestilling_img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .flex img {
+      width: 200px;
+      height: auto;
+      flex-shrink: 0;
+    }
+  } */
 </style>
