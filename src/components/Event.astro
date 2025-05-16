@@ -1,0 +1,190 @@
+---
+import "../style/style.css";
+---
+
+<article>
+  <img src="/src/assets/img/workshop1.png" alt="billede fra workshop" />
+  <div class="info">
+    <h2>Titel på workshop</h2>
+    <p>Skolevej 67, 4622 Havdrup</p>
+    <p class="bold">Søndag d. 11. december</p>
+    <p class="time">09.00 - 12.00</p>
+    <p class="description">
+      Kom med til en hyggelig og kreativ eftermiddag, hvor du binder din helt
+      egen julekrans med tørrede blomster.
+    </p>
+
+    <div class="laes-mere">
+      <ul id="accordion">
+        <li>
+          <label for="workshop1">Læs mere </label>
+          <input type="checkbox" id="workshop1" />
+          <!-- checkbox er en 'knap' der skal markeres, så man kan se hvilken der skal foldes ud -->
+
+          <div class="content">
+            <p>
+              Længere beskrivelse af hvad denne workshop går ud på med pris og
+              alting Længere beskrivelse af hvad denne workshop går ud på med
+              pris og altingLængere beskrivelse af hvad denne workshop går ud på
+              med pris og altingLængere beskrivelse af hvad denne workshop går
+              ud på med pris og alting
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <a href="">Tilmeld her</a>
+  </div>
+</article>
+
+<style>
+  /*************** Reset *********************/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /*************** Reset *********************/
+
+  .laes-mere,
+  article {
+    background: var(--beige);
+  }
+
+  article {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  p,
+  h2 {
+    color: var(--darkgreen);
+    margin: 10px 0 0 0;
+  }
+
+  h2 {
+    margin: 20px 0 0 0;
+  }
+
+  .bold {
+    font-weight: bolder;
+  }
+
+  .time {
+    margin: -2px 0 0 0;
+  }
+
+  .description {
+    margin: 20px 0 20px 0;
+  }
+
+  /* v----- nu kommer fancy accordion stylingen så den virker -----v */
+
+  #accordion {
+    margin-top: 10px auto;
+    max-width: 400px;
+    /* længde på fold ud boksen; */
+  }
+
+  #accordion li {
+    list-style: none;
+    max-width: 600px;
+    margin-bottom: 10px;
+  }
+
+  #accordion input[type="checkbox"] {
+    display: none;
+  }
+
+  #accordion li label {
+    padding: 10px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: var(--mediumgreen);
+    font-family: var(--font-p);
+  }
+
+  /* denstående er styling af span aka den der pil 'v' */
+  #accordion li label span {
+    transform: rotate(90deg);
+    font-size: 22px;
+  }
+
+  #accordion label + input[type="radio"] {
+    display: none;
+  }
+  /* overstående er så man ikke kan se check knappen */
+
+  #accordion .content {
+    padding: 10px 0 0 0;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    /* max-height:0; og overflow:hidden; gør at man ikke kan se content-indholdet, når den ikke er foldet ud */
+    transition: max-height 0.5s;
+  }
+
+  #accordion input[type="checkbox"]:checked + .content {
+    max-height: 400px;
+  }
+
+  a {
+    display: grid;
+    justify-self: end;
+    margin-top: -50px;
+    color: var(--beige);
+    text-decoration: none;
+    background-color: var(--rosa);
+    padding: 10px;
+    text-align: center;
+    font-family: var(--font-p);
+    padding: 5px 10px 5px 10px;
+  }
+
+  a:hover {
+    background-color: var(--darkgreen);
+  }
+
+  /* v------------------------ desktop styliiing ------------------------v */
+  @media (min-width: 820px) {
+    article {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      margin-left: 100px;
+      margin-right: 100px;
+      height: 320px;
+    }
+
+    h2,
+    p {
+      margin: 5px 0 0 10px;
+    }
+
+    p {
+      margin: 10px 0 0 10px;
+    }
+
+    .time {
+      margin: 10px 0 0 10px;
+    }
+
+    .description {
+      margin: 20px 0 20px 10px;
+    }
+
+    a {
+      margin-top: -30px;
+    }
+
+    label {
+      margin: 0 0 0 10px;
+    }
+  }
+</style>
