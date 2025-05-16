@@ -6,32 +6,42 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <main>
     <header>header element her</header>
-    <div class="green grid_1-1">
-      <img src="src/assets/img/blomster1.png" alt="billede her" />
+    <div class="mediumgreen grid_1-1">
       <div class="bestilling">
-        <h1>Bestilling af blomster</h1>
-        <p>
+        <h1 class="praktisk_info_beige">Bestilling af blomster</h1>
+        <p class="praktisk_info_beige">
           Hos os kan du bestille håndbundne buketter, lavet med blomster og
           grønt direkte fra vores egen blomstermark. Vi binder gerne efter dine
           ønsker om farver og form, og sørger for, at buketten bliver smukt
           indpakket og klar til at glæde dig eller en du holder af.
         </p>
-        <strong><p>Praktisk info:</p></strong>
+        <strong
+          ><p class="praktisk_info praktisk_info_beige">
+            Praktisk info:
+          </p></strong
+        >
         <ul>
-          <li>Bestil gerne minimum 2 dage i forvejen</li>
-          <li>Priser fra 200 kr.</li>
-          <li>Gratis levering i 4622 Havdrup og 2680 Solrød Strand</li>
-          <li>Levering udenfor disse områder kan tilkøbes</li>
+          <li>- Bestil gerne minimum 2 dage i forvejen</li>
+          <li>- Priser fra 200 kr.</li>
+          <li>- Gratis levering i 4622 Havdrup og 2680 Solrød Strand</li>
+          <li>- Levering udenfor disse områder kan tilkøbes</li>
         </ul>
-        <p>
-          Send os en mail på <strong>gaardblomsten@gmail.com</strong> for at bestille.
-          Vi aftaler tidspunkt for afhentning eller levering, når du skriver.
+        <p class="praktisk_info_beige">
+          Send os en mail på <strong class="praktisk_info_beige"
+            >gaardblomsten@gmail.com</strong
+          > for at bestille. Vi aftaler tidspunkt for afhentning eller levering,
+          når du skriver.
         </p>
       </div>
+      <img
+        class="bestilling_img"
+        src="src/assets/img/blomster1.png"
+        alt="billede her"
+      />
     </div>
 
     <div class="gallery">
-      <h2>Sæsonens favoritter</h2>
+      <h2 class="sæsonens_favoritter">Sæsonens favoritter</h2>
       <div class="flex">
         <img
           class="img_fotokarrusel"
@@ -61,8 +71,8 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
 
-    <div class="grid_1-1">
-      <div>
+    <div class="lightgreen grid_1-1">
+      <div class="gaardblomstens_vejbod">
         <h1>Gaardblomstens vejbod</h1>
         <p>
           I vores lille vejbod ved gården kan du finde friske, håndbundne
@@ -76,12 +86,12 @@ import Layout from "../layouts/Layout.astro";
           lidt hverdagsglæde. Vejboden er selvbetjent, nem at få øje på fra
           vejen og med parkering lige ved siden af, så du let kan svinge forbi.
         </p>
-        <strong><p>Praktisk info:</p></strong>
+        <strong><p class="praktisk_info">Praktisk info:</p></strong>
         <ul>
-          <li>Betaling med MobilePay</li>
-          <li>Åben fra april til september*</li>
-          <li>Hverdage kl. 10–17 & Lørdag-søndag kl. 09–16</li>
-          <li>Skolevej 67, 4622 Havdrup</li>
+          <li>- Betaling med MobilePay</li>
+          <li>- Åben fra april til september*</li>
+          <li>- Hverdage kl. 10–17 & Lørdag-søndag kl. 09–16</li>
+          <li>- Skolevej 67, 4622 Havdrup</li>
         </ul>
         <p>
           *Vejboden følger naturens rytme, så åbningstiderne kan variere i takt
@@ -89,62 +99,169 @@ import Layout from "../layouts/Layout.astro";
           Facebook og Instagram @gaardblomsten, hvor vi løbende opdaterer.
         </p>
       </div>
-      <img src="src/assets/img/hjem1.png" alt="" />
+      <img src="src/assets/img/blomster1.png" alt="" />
     </div>
   </main>
 </Layout>
 <style>
   /* for mobil og generel */
-  /* 
-  .grid_1-1 {
+
+  /* .grid_1-1 styling gør at billedet går helt ud til kanterne på mobilview  */
+
+  .grid_1-1 > .bestilling_img {
+    width: 100vw;
+    max-width: none;
+    object-fit: cover;
     display: block;
-  } */
+  }
+  /* padding på teskten i grid_1-1 */
+  .bestilling {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .gaardblomstens_vejbod {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  /* padding for h1 top */
+  h1 {
+    padding-top: 20px;
+  }
 
-  /* for at få teksten under billedet */
-  /* .green {
-    background-color: var(--mediumgreen);
-  } */
-
+  /* baggrundsfarve */
+  main {
+    background-color: var(--beige);
+  }
+  /* al teskt darkgreen */
+  * {
+    color: var(--darkgreen);
+  }
   /* under er centrering af h1, h2 og h3 */
   h1,
   h2,
   h3 {
     text-align: center;
   }
+  /* paddingf for der hvor der står praktisk info og så er der li under, loven om nærhed */
+  .praktisk_info {
+    padding-top: 20px;
+  }
   /* foto karrusel */
+  .sæsonens_favoritter {
+    padding-top: 40px;
+  }
   .flex {
     display: flex;
     gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
     margin-left: 20px;
-  }
-  /* styling af fotos til foto karrusel til mobil */
-  .img_fotokarrusel {
-    width: 224px;
-    height: 298px;
-    object-fit: cover;
+    padding-bottom: 60px;
   }
 
-  /* for desktop */
+  /* for at få praktisk info div beige */
+  .bestilling {
+    color: var(--beige);
+  }
+  .praktisk_info_beige,
+  li {
+    color: var(--beige);
+  }
+  /* for at få sektionerne i farver */
+  /* første sektion */
+  .mediumgreen {
+    background-color: var(--mediumgreen);
+  }
+  /* anden sektion */
+  .lightgreen {
+    background-color: var(--lightgreen);
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* styling for list elementerne */
+  ul,
+  li {
+    font-family: var(--font-p);
+    font-size: var(--fontsize-p);
+  }
+  /* ingen padding ude i venstre side ved bindestregerne */
+  ul {
+    list-style-type: unset;
+    padding-left: 0;
+  }
+
+  /* styling så list elementerne ikke har prikker men bindestreg */
+  .ul,
+  li {
+    list-style: none; /* Fjern standardprikker */
+    padding-left: 0;
+  }
+
+  /* Liste i .bestilling så dens skrift bliver beige */
+  .bestilling ul li {
+    color: var(--beige);
+  }
+
+  /* Liste i -lightgreen så dens skrift bliver darkgreen */
+  .lightgreen ul li {
+    color: var(--darkgreen);
+  }
+
+  /*************************************************************** FOR DESKTOP ****************************************************/
   @media (min-width: 800px) {
+    /* grid for teskt og billede */
     .grid_1-1 {
       display: grid;
-      grid-template-columns: 1fr, 1fr;
-    }
-    .bestilling {
-      grid-column: 2 / 3;
-    }
-    */
-    /* img {
-      width: auto;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px; /* afstand mellem kolonnerne */
+      /* align-items: start; justerer elementerne i toppen */
     }
 
-    /* styling af fotos til foto karrusel til mobil */
-    .img_fotokarrusel {
-      width: 298px;
-      height: 349px;
+    .grid_1-1 > .bestilling_img {
+      height: auto;
       object-fit: cover;
+      margin-left: 0;
+      width: 100%;
+      max-width: none;
+      display: block;
+    }
+    .grid_1-1 > bestilling {
+      max-width: 50%; /* halvdelen af din main */
+    }
+    .grid_1-1 {
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      width: 100vw;
+      background-color: var(--lightgreen);
+    }
+
+    /* for at få billede til venstre på desktop, lav om på orderen */
+    .bestilling_img {
+      order: -1;
+    }
+
+    .grid_1-1 img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* padding på teksten i grid_1-1 computer */
+    .bestilling {
+      padding-left: 50px;
+      padding-right: 70px;
+    }
+    .gaardblomstens_vejbod {
+      padding-left: 70px;
+      padding-right: 50px;
     }
   }
 </style>
