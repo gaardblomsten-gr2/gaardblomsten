@@ -2,39 +2,42 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout />
-
-<html lang="da">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abonnement</title>
-  </head>
-  <body>
-    <header></header>
-    <main>
-      <section class="hero">
-        <p></p>
-        <a href=""></a>
-      </section>
-      <section>
-        <h1>Sådan fungerer det</h1>
-        <p>
-          OBS: Da blomsterne kommer fra egen gård, er abonnementer kun mulige
-          fra juli til august
-        </p>
-        <div class="grid_1-1-1">
+<Layout>
+  <main>
+    <section class="hero">
+      <img src="/src/assets/img/abonnement1.png" alt="" />
+      <p class="p_hero">
+        Et abonnement er en perfekt måde at skabe en dejlig stemning i dit hjem,
+        i din virksomhed eller give i gave til en, der står dig nær.
+      </p>
+      <a class="a_hero" href="">Start abonnement</a>
+    </section>
+    <section>
+      <h1>Sådan fungerer det</h1>
+      <p class="obs">
+        OBS: Da blomsterne kommer fra egen gård, er abonnementer kun mulige fra
+        juli til august
+      </p>
+      <div class="grid_1-1-1">
+        <div class="del_3">
           <h2>Vælg leveringsform</h2>
           <p>
             Gratis levering i 4622 Havdrup og 2680 Solrød Strand. Øvrige
             postnumre mod tillæg. Gratis afhentning muligt på Gaardblomsten i
             Gammel Havdrup hver tirsdag.
           </p>
+        </div>
+        <div class="del_3">
           <h2>Vælg abonnement</h2>
           <p>
             Nyd friske blomster hver uge. Ingen buketter er ens, men afhænger af
-            måneden. Vælg mellem: 4 uger - 700 kr. 6 uger - 1050 kr.
+            måneden.
           </p>
+          <p><strong>Vælg mellem:</strong></p>
+          <p class="uger">4 uger - 700 kr.</p>
+          <p class="uger">6 uger - 1050 kr.</p>
+        </div>
+        <div class="del_3">
           <h2>Send formular</h2>
           <p>
             Glæd dig til en modtage en unik blomsterbuket hver tirsdag i den
@@ -42,10 +45,12 @@ import Layout from "../layouts/Layout.astro";
             er en del af noget særligt - hver dag.
           </p>
         </div>
-      </section>
-      <section class="section_lightgreen">
-        <h2>Start dit abonnement og udfyld formularen</h2>
-        <div class="form">
+      </div>
+    </section>
+    <section class="section_lightgreen">
+      <h3 class="overskrift_form">Start dit abonnement og udfyld formularen</h3>
+      <div class="form">
+        <div class="venstre">
           <input type="text" id="name" name="name" placeholder="Dit navn" />
           <input
             type="text"
@@ -63,40 +68,216 @@ import Layout from "../layouts/Layout.astro";
             <option value="4 uger">4 uger - 700 kr.</option>
             <option value="6 uger">6 uger - 1050 kr.</option>
           </select>
-          <input type="text" id="andet" name="andet" placeholder="Andet" />
-          <a href=""></a>
         </div>
-      </section>
-      <div class="grid_1-1">
-        <div>
-          <h2>Et abonnement hos Gaardblomsten</h2>
-          <p>
-            Fra juli til august kan du få glæden af friske, håndbundne buketter
-            hver uge med vores blomsterabonnement. Alle blomster er dyrket her
-            på marken, bliver nænsomt høstet og bundet med et personligt præg,
-            før de lander hos dig.
-          </p>
-          <p>
-            Hver buket er unik, sammensat af det, marken byder på netop den uge.
-            Da vi dyrker alle blomster på friland og følger naturens rytme, er
-            det vejret, der bestemmer, hvornår de er klar. Til gengæld kan vi
-            love dig noget særligt: buketter, der er dugfriske, duftende og helt
-            vores egne.
-          </p>
+        <div class="hojre">
+          <input
+            class="andet"
+            type="text"
+            id="andet"
+            name="andet"
+            placeholder="Andet"
+          />
+          <a class="bestilling" href="">Gennemfør bestilling</a>
         </div>
-        <img src="" alt="" />
       </div>
-      <footer></footer>
-    </main>
-  </body>
-</html>
+    </section>
+    <div class="grid_1-1">
+      <img
+        class="abonnement_billed"
+        src="/src/assets/img/blomster1.png"
+        alt=""
+      />
+      <div class="down_section">
+        <h3 class="beige">Et abonnement hos <span>Gaardblomsten</span></h3>
+        <p class="beige">
+          Fra juli til august kan du få glæden af friske, håndbundne buketter
+          hver uge med vores blomsterabonnement. Alle blomster er dyrket her på
+          marken, bliver nænsomt høstet og bundet med et personligt præg, før de
+          lander hos dig.
+        </p>
+        <p class="beige">
+          Hver buket er unik, sammensat af det, marken byder på netop den uge.
+          Da vi dyrker alle blomster på friland og følger naturens rytme, er det
+          vejret, der bestemmer, hvornår de er klar. Til gengæld kan vi love dig
+          noget særligt: buketter, der er dugfriske, duftende og helt vores
+          egne.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>
 
 <style>
+  .hero {
+    display: grid;
+  }
+
+  img,
+  .p_hero,
+  .a_hero {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .p_hero {
+    color: var(--beige);
+    padding: 0 0 50px 10px;
+    place-self: end start;
+  }
+
+  .a_hero {
+    place-self: end start;
+    margin: 0 0 20px 10px;
+    color: var(--beige);
+    text-decoration: none;
+    background-color: var(--rosa);
+    padding: 10px;
+    text-align: center;
+    font-family: var(--font-p);
+    padding: 5px 10px 5px 10px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .obs {
+    text-align: center;
+  }
+
+  h2 {
+    font-family: "Afacad", sans-serif;
+  }
+
+  h3 {
+    font-family: "Libre Bodoni", serif;
+    text-align: center;
+  }
+
+  .uger {
+    line-height: 10px;
+  }
+
   .section_lightgreen {
     background-color: var(--lightgreen);
   }
 
   .grid_1-1 {
     background-color: var(--mediumgreen);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    color: var(--darkgreen);
+  }
+
+  .beige {
+    color: var(--beige);
+  }
+
+  a:hover {
+    background-color: var(--darkgreen);
+  }
+
+  .overskrift_form {
+    padding: 20px 0 0 0;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .venstre {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hojre {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  input {
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    border: none;
+    color: var(--grey);
+    font-family: var(--font-p);
+  }
+
+  select {
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    border: none;
+    color: var(--grey);
+    font-family: var(--font-p);
+  }
+
+  .andet {
+    padding: 40px;
+  }
+
+  .bestilling {
+    color: var(--beige);
+    text-decoration: none;
+    background-color: var(--rosa);
+    padding: 10px;
+    text-align: center;
+    font-family: var(--font-p);
+    padding: 5px 10px 5px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  span {
+    font-family: "Oooh Baby", cursive;
+    font-weight: lighter;
+  }
+
+  .down_section {
+    padding: 0 0 60px 0;
+  }
+
+  @media (min-width: 800px) {
+    .grid_1-1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+    }
+
+    .del_3 {
+      max-width: 80%;
+    }
+
+    .form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .grid_1-1 {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .abonnement_billed {
+      order: 2;
+    }
+
+    .down_section {
+      order: 1;
+      max-width: 50%;
+    }
   }
 </style>
