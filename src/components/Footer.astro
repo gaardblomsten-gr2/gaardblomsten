@@ -1,0 +1,150 @@
+---
+import "../style/style.css";
+---
+
+<footer>
+  <div class="logo">
+    <img src="/src/assets/logo.svg" alt="Gaardblomsten logo" />
+  </div>
+  <div class="kontakt">
+    <p class="bold">Kontakt os:</p>
+    <div class="some_link">
+      <img src="/src/assets/facebook.svg" alt="facebook icon" />
+      <a href="https://www.facebook.com/profile.php?id=100083878951607"
+        >Gaardblomsten</a
+      >
+    </div>
+    <div class="some_link">
+      <img src="/src/assets/instagram.svg" alt="instagram logo" />
+      <a href="https://www.instagram.com/gaardblomsten/?hl=da">Gaardblomsten</a>
+    </div>
+    <div class="some_link">
+      <img src="/src/assets/mail.svg" alt="e-mail icon" />
+      <p>gaardblomsten@gmail.com</p>
+    </div>
+    <div class="some_link">
+      <img src="/src/assets/telefon.svg" alt="telefon icon" />
+      <p>+45 12 34 56 78</p>
+    </div>
+  </div>
+
+  <div class="find_os">
+    <p class="bold">Find os her:</p>
+    <p>Skolevej 67</p>
+    <p>4622 Havdrup</p>
+    <p>Danmark</p>
+  </div>
+
+  <div class="navigation">
+    <p class="bold">Hurtige links:</p>
+    <a href="/">Hjem</a>
+    <a href="/blomster">Blomster</a>
+    <a href="/workshop">Workshop</a>
+    <a href="/abonnement">Abonnement</a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--darkgreen);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .logo {
+    height: 185px;
+    width: 178px;
+  }
+
+  .logo,
+  .kontakt {
+    display: grid;
+    grid-column: span 2;
+    /* justify-content: center; */
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .find_os,
+  .navigation {
+    padding-top: 20px;
+    display: grid;
+    /* justify-items: center; */
+    /* --------------------------------- overstående gør at den rykker sig i midten, men når den fjernes ser det mystisk ud  på mobil first */
+  }
+
+  .bold {
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+  p {
+    color: var(--beige);
+    font-size: 1rem;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--beige);
+    font-family: var(--font-p);
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .some_link {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* afstand mellem ikon og tekst */
+  }
+
+  img {
+    padding-bottom: 10px;
+  }
+
+  a:hover {
+    color: var(--lightgreen);
+    text-decoration: underline;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 20px;
+    gap: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .navigation a {
+    line-height: 30px;
+  }
+
+  @media (min-width: 800px) {
+    footer {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .logo,
+    .kontakt {
+      display: grid;
+      grid-column: span 1;
+    }
+
+    .kontakt,
+    .find_os,
+    .navigation {
+      align-self: start;
+      /* margin: 0; Fjern utilsigtet afstand */
+      padding: 0;
+      justify-content: center;
+    }
+  }
+</style>
