@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 <title>Blomster</title>
 <Layout>
   <main>
-    <header>header element her</header>
+    <!-- header element her -->
     <div class="mediumgreen grid_1-1">
       <div class="bestilling">
         <h1 class="praktisk_info_beige">Bestilling af blomster</h1>
@@ -74,7 +74,7 @@ import Layout from "../layouts/Layout.astro";
 
     <div class="lightgreen grid_1-1">
       <div class="gaardblomstens_vejbod">
-        <h1>Gaardblomstens vejbod</h1>
+        <h1><span>Gaardblomstens</span> vejbod</h1>
         <p>
           I vores lille vejbod ved gården kan du finde friske, håndbundne
           buketter og blomsterbundter, alt sammen dyrket med kærlighed lige her
@@ -153,7 +153,13 @@ import Layout from "../layouts/Layout.astro";
   h3 {
     text-align: center;
   }
-  /* paddingf for der hvor der står praktisk info og så er der li under, loven om nærhed */
+  /* font for Gaardblomsten og så den bliver lighter */
+  span {
+    font-family: "Oooh Baby", cursive;
+    font-weight: lighter;
+  }
+
+  /* padding for der hvor der står praktisk info og så er der li under, loven om nærhed */
   .praktisk_info {
     padding-top: 20px;
   }
@@ -240,6 +246,7 @@ import Layout from "../layouts/Layout.astro";
       max-width: none;
       display: block;
     }
+    /* så billedet fylder halvdelen af min main */
     .grid_1-1 > bestilling {
       max-width: 50%; /* halvdelen af din main */
     }
@@ -250,7 +257,7 @@ import Layout from "../layouts/Layout.astro";
       margin-left: -50vw;
       margin-right: -50vw;
       width: 100vw;
-      background-color: var(--lightgreen);
+      /* background-color: var(--lightgreen); */
     }
 
     /* for at få billede til venstre på desktop, lav om på orderen */
