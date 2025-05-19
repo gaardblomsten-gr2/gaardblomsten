@@ -1,0 +1,93 @@
+---
+import "../style/style.css";
+---
+
+<article>
+  <h4>Gå ikke glip af nyheder fra <span>Gaardblomsten</span></h4>
+  <p>
+    Vi sender mails 1-2 gange om måneden med nyheder, workshops, tips & tricks
+    og andre hyggelige opdateringer her fra Gaardblomsten - Maria
+  </p>
+  <div class="grid_3-3-1">
+    <input type="text" id="name" name="name" placeholder="Dit navn" />
+    <input
+      type="text"
+      id="email"
+      name="email"
+      placeholder="Skriv din email her"
+    />
+    <a href="">Tilmeld her</a>
+  </div>
+</article>
+
+<style>
+  article {
+    text-align: center;
+    margin: 0 50px 0 50px;
+  }
+
+  h4 {
+    font-size: var(--fontsize-h4);
+    font-weight: lighter;
+  }
+
+  span {
+    font-family: "Oooh Baby", cursive;
+  }
+
+  input {
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    border: none;
+    color: var(--grey);
+    font-family: var(--font-p);
+  }
+
+  a {
+    color: var(--beige);
+    text-decoration: none;
+    background-color: var(--rosa);
+    padding: 10px;
+    text-align: center;
+    font-family: var(--font-p);
+    padding: 5px 10px 5px 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    min-width: 90px;
+  }
+
+  a:hover {
+    background-color: var(--darkgreen);
+  }
+
+  .grid_3-3-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 800px) {
+    .grid_3-3-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin: 0 auto;
+      width: 50%;
+    }
+
+    p {
+      margin: 0 auto;
+      width: 45%;
+    }
+
+    a {
+      width: fit-content;
+    }
+
+    input {
+      margin: 20px 10px 0 0;
+      height: 10%;
+    }
+  }
+</style>

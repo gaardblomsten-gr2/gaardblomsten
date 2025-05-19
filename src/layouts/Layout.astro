@@ -2,6 +2,7 @@
 import "../style/style.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Nyhedsbrev from "../components/Nyhedsbrev.astro";
 ---
 
 <!doctype html>
@@ -39,8 +40,8 @@ import Header from "../components/Header.astro";
   <body>
     <slot />
   </body>
+  <Nyhedsbrev />
   <Footer />
-
 
   <style>
     html,
@@ -50,4 +51,5 @@ import Header from "../components/Header.astro";
       height: 100%;
     }
   </style>
+
 </html>
