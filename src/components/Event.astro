@@ -15,176 +15,170 @@ import "../style/style.css";
     </p>
 
     <div class="laes-mere">
-      <ul id="accordion">
-        <li>
-          <label for="workshop1">Læs mere </label>
-          <input type="checkbox" id="workshop1" />
-          <!-- checkbox er en 'knap' der skal markeres, så man kan se hvilken der skal foldes ud -->
+      <label for="workshop1">Læs mere </label>
 
-          <div class="content">
-            <p>
-              Længere beskrivelse af hvad denne workshop går ud på med pris og
-              alting Længere beskrivelse af hvad denne workshop går ud på med
-              pris og altingLængere beskrivelse af hvad denne workshop går ud på
-              med pris og altingLængere beskrivelse af hvad denne workshop går
-              ud på med pris og alting
-            </p>
-          </div>
-        </li>
-      </ul>
+      <!-- checkbox er en 'knap' der skal markeres, så man kan se hvilken der skal foldes ud -->
+
+      <div class="content">
+        <!-- skal have indsat 'usynlig' klassen for at teksten bliver skjult -->
+        <p>
+          Længere beskrivelse af hvad denne workshop går ud på med pris og
+          alting Længere beskrivelse af hvad denne workshop går ud på med pris
+          og altingLængere beskrivelse af hvad denne workshop går ud på med pris
+          og altingLængere beskrivelse af hvad denne workshop går ud på med pris
+          og alting
+        </p>
+      </div>
+
+      <a href="">Tilmeld her</a>
     </div>
-    <a href="">Tilmeld her</a>
   </div>
-</article>
 
-<style>
-  /*************** Reset *********************/
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  /*************** Reset *********************/
+  <style>
+    /*************** Reset *********************/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /*************** Reset *********************/
 
-  .laes-mere,
-  article {
-    background: var(--beige);
-  }
-
-  article {
-    margin: 20px;
-    padding: 20px;
-  }
-
-  p,
-  h2 {
-    color: var(--darkgreen);
-    margin: 10px 0 0 0;
-  }
-
-  h2 {
-    margin: 20px 0 0 0;
-  }
-
-  .bold {
-    font-weight: bolder;
-  }
-
-  .time {
-    margin: -2px 0 0 0;
-  }
-
-  .description {
-    margin: 20px 0 20px 0;
-  }
-
-  /* v----- nu kommer fancy accordion stylingen så den virker -----v */
-
-  #accordion {
-    margin-top: 10px auto;
-    max-width: 400px;
-    /* længde på fold ud boksen; */
-  }
-
-  #accordion li {
-    list-style: none;
-    max-width: 600px;
-    margin-bottom: 10px;
-  }
-
-  #accordion input[type="checkbox"] {
-    display: none;
-  }
-
-  #accordion li label {
-    padding: 10px 0 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    color: var(--mediumgreen);
-    font-family: var(--font-p);
-  }
-
-  /* denstående er styling af span aka den der pil 'v' */
-  #accordion li label span {
-    transform: rotate(90deg);
-    font-size: 22px;
-  }
-
-  #accordion label + input[type="radio"] {
-    display: none;
-  }
-  /* overstående er så man ikke kan se check knappen */
-
-  #accordion .content {
-    padding: 10px 0 0 0;
-    line-height: 26px;
-    max-height: 0;
-    overflow: hidden;
-    /* max-height:0; og overflow:hidden; gør at man ikke kan se content-indholdet, når den ikke er foldet ud */
-    transition: max-height 0.5s;
-  }
-
-  #accordion input[type="checkbox"]:checked + .content {
-    max-height: 400px;
-  }
-
-  a {
-    display: grid;
-    justify-self: end;
-    margin-top: -50px;
-    color: var(--beige);
-    text-decoration: none;
-    background-color: var(--rosa);
-    padding: 10px;
-    text-align: center;
-    font-family: var(--font-p);
-    padding: 5px 10px 5px 10px;
-  }
-
-  a:hover {
-    background-color: var(--darkgreen);
-  }
-
-  /* v------------------------ desktop styliiing ------------------------v */
-  @media (min-width: 820px) {
-    article {
+    /* v------------------------- harmonika-halløjsa -------------------------v */
+    .laes-mere {
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      margin-left: 100px;
-      margin-right: 100px;
-      height: 320px;
+      grid-template-columns: 1fr 1fr;
+    }
+    .content {
+      grid-column: 1 / span 2;
     }
 
-    h2,
-    p {
-      margin: 5px 0 0 10px;
-    }
-
-    p {
-      margin: 10px 0 0 10px;
-    }
-
-    .time {
-      margin: 10px 0 0 10px;
-    }
-
-    .description {
-      margin: 20px 0 20px 10px;
+    .usynlig {
+      display: none;
     }
 
     a {
-      margin-top: -30px;
+      place-self: end;
+      grid-column: 2;
+    }
+
+    .laes-mere,
+    article {
+      background: var(--beige);
     }
 
     label {
-      margin: 0 0 0 10px;
+      font-family: var(--font-p);
+      color: var(--mediumgreen);
     }
-  }
-</style>
+
+    label:hover {
+      color: var(--lightgreen);
+      text-decoration: underline;
+    }
+
+    article {
+      margin: 20px;
+      padding: 20px;
+    }
+
+    p,
+    h2 {
+      color: var(--darkgreen);
+      margin: 10px 0 0 0;
+    }
+
+    h2 {
+      margin: 20px 0 0 0;
+    }
+
+    .bold {
+      font-weight: bolder;
+    }
+
+    .time {
+      margin: -2px 0 0 0;
+    }
+
+    .description {
+      margin: 20px 0 20px 0;
+    }
+
+    .content {
+      padding: 10px 0 0 0;
+      line-height: 26px;
+    }
+
+    a {
+      display: grid;
+      justify-self: end;
+      color: var(--beige);
+      text-decoration: none;
+      background-color: var(--rosa);
+      padding: 10px;
+      text-align: center;
+      font-family: var(--font-p);
+      padding: 5px 10px 5px 10px;
+    }
+
+    a:hover {
+      background-color: var(--darkgreen);
+    }
+
+    /* v------------------------ desktop styliiing ------------------------v */
+    @media (min-width: 820px) {
+      article {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+
+      h2,
+      p {
+        margin: 5px 0 0 10px;
+      }
+
+      p {
+        margin: 10px 0 0 10px;
+      }
+
+      .time {
+        margin: 10px 0 0 10px;
+      }
+
+      .description {
+        margin: 20px 0 20px 10px;
+      }
+
+      /* a {
+        margin-top: -30px;
+      } */
+
+      label {
+        margin: 0 0 0 10px;
+      }
+    }
+  </style>
+
+  <!-- javascript for at gøre toggle dimmeren klikbar -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const label = document.querySelector(".laes-mere label");
+      const content = document.querySelector(".laes-mere .content");
+
+      label.addEventListener("click", () => {
+        content.classList.toggle("usynlig");
+
+        // nedstående får teksten til at skifte fra læs mere til læs mindre
+        label.textContent = content.classList.contains("usynlig")
+          ? "Læs mere"
+          : "Læs mindre";
+      });
+    });
+  </script>
+</article>
