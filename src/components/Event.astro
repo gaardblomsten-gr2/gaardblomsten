@@ -1,18 +1,17 @@
 ---
+//@ts-nocheck
 import "../style/style.css";
+const { eventdata } = Astro.props;
 ---
 
 <article>
   <img src="/src/assets/img/workshop1.png" alt="billede fra workshop" />
   <div class="info">
-    <h2>Titel på workshop</h2>
-    <p>Skolevej 67, 4622 Havdrup</p>
-    <p class="bold">Søndag d. 11. december</p>
-    <p class="time">09.00 - 12.00</p>
-    <p class="description">
-      Kom med til en hyggelig og kreativ eftermiddag, hvor du binder din helt
-      egen julekrans med tørrede blomster.
-    </p>
+    <h2>{eventdata.title}</h2>
+    <p>{eventdata.adress}</p>
+    <p class="bold">{eventdata.date}</p>
+    <p class="time">Kl. {eventdata.time} - {eventdata.time_end}</p>
+    <p class="description">{eventdata.description}</p>
 
     <div class="laes-mere">
       <label for="workshop1">Læs mere </label>
@@ -22,163 +21,171 @@ import "../style/style.css";
       <div class="content">
         <!-- skal have indsat 'usynlig' klassen for at teksten bliver skjult -->
         <p>
-          Længere beskrivelse af hvad denne workshop går ud på med pris og
-          alting Længere beskrivelse af hvad denne workshop går ud på med pris
-          og altingLængere beskrivelse af hvad denne workshop går ud på med pris
-          og altingLængere beskrivelse af hvad denne workshop går ud på med pris
-          og alting
+          {eventdata.read_more}
         </p>
+        <p><strong>Pris: </strong>{eventdata.price}</p>
       </div>
 
       <a href="">Tilmeld her</a>
     </div>
   </div>
+</article>
 
-  <style>
-    /*************** Reset *********************/
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    /*************** Reset *********************/
+<!-- javascript for at gøre toggle dimmeren klikbar -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // betyder: når sidens indhold er loadet, så starter koden
+    const toggleBoxes = document.querySelectorAll(".laes-mere");
+    // betyder: 'querySelectorAll' betyder den vælger alle med classen '.laes-mere', ikke kun den første
 
-    /* v------------------------- harmonika-halløjsa -------------------------v */
-    .laes-mere {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .content {
-      grid-column: 1 / span 2;
-    }
-
-    .usynlig {
-      display: none;
-    }
-
-    a {
-      place-self: end;
-      grid-column: 2;
-    }
-
-    .laes-mere,
-    article {
-      background: var(--beige);
-    }
-
-    label {
-      font-family: var(--font-p);
-      color: var(--mediumgreen);
-    }
-
-    label:hover {
-      color: var(--lightgreen);
-      text-decoration: underline;
-    }
-
-    article {
-      margin: 20px;
-      padding: 20px;
-    }
-
-    p,
-    h2 {
-      color: var(--darkgreen);
-      margin: 10px 0 0 0;
-    }
-
-    h2 {
-      margin: 20px 0 0 0;
-    }
-
-    .bold {
-      font-weight: bolder;
-    }
-
-    .time {
-      margin: -2px 0 0 0;
-    }
-
-    .description {
-      margin: 20px 0 20px 0;
-    }
-
-    .content {
-      padding: 10px 0 0 0;
-      line-height: 26px;
-    }
-
-    a {
-      display: grid;
-      justify-self: end;
-      color: var(--beige);
-      text-decoration: none;
-      background-color: var(--rosa);
-      padding: 10px;
-      text-align: center;
-      font-family: var(--font-p);
-      padding: 5px 10px 5px 10px;
-    }
-
-    a:hover {
-      background-color: var(--darkgreen);
-    }
-
-    /* v------------------------ desktop styliiing ------------------------v */
-    @media (min-width: 820px) {
-      article {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        margin-left: 100px;
-        margin-right: 100px;
-      }
-
-      h2,
-      p {
-        margin: 5px 0 0 10px;
-      }
-
-      p {
-        margin: 10px 0 0 10px;
-      }
-
-      .time {
-        margin: 10px 0 0 10px;
-      }
-
-      .description {
-        margin: 20px 0 20px 10px;
-      }
-
-      /* a {
-        margin-top: -30px;
-      } */
-
-      label {
-        margin: 0 0 0 10px;
-      }
-    }
-  </style>
-
-  <!-- javascript for at gøre toggle dimmeren klikbar -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const label = document.querySelector(".laes-mere label");
-      const content = document.querySelector(".laes-mere .content");
+    toggleBoxes.forEach((box) => {
+      // betyder: går igennem dem én ad gangen
+      const label = box.querySelector("label");
+      const content = box.querySelector(".content");
+      // betyder: inde i boxen finder vi 'label' og 'content'
 
       label.addEventListener("click", () => {
+        // betyder: når man klikker på label altså 'læs mere/læs mindre'
         content.classList.toggle("usynlig");
+        // betyder: fjerner eller tilføjer klassen 'usynlig' så teksten vises eller ej
 
-        // nedstående får teksten til at skifte fra læs mere til læs mindre
+        // Opdater tekst på label
         label.textContent = content.classList.contains("usynlig")
           ? "Læs mere"
           : "Læs mindre";
+        // betyder: dette gør at teksten ændrer sig fra læs mere og læs mindre
       });
     });
-  </script>
-</article>
+  });
+</script>
+
+<style>
+  /*************** Reset *********************/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /*************** Reset *********************/
+
+  /* v------------------------- harmonika-halløjsa -------------------------v */
+  .laes-mere {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .content {
+    grid-column: 1 / span 2;
+  }
+
+  .usynlig {
+    display: none;
+  }
+
+  a {
+    place-self: end;
+    grid-column: 2;
+  }
+
+  .laes-mere,
+  article {
+    background: var(--beige);
+  }
+
+  label {
+    font-family: var(--font-p);
+    color: var(--mediumgreen);
+  }
+
+  label:hover {
+    color: var(--lightgreen);
+    text-decoration: underline;
+  }
+
+  article {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  p,
+  h2 {
+    color: var(--darkgreen);
+    margin: 10px 0 0 0;
+  }
+
+  h2 {
+    margin: 20px 0 0 0;
+  }
+
+  .bold {
+    font-weight: bolder;
+  }
+
+  .time {
+    margin: -2px 0 0 0;
+  }
+
+  .description {
+    margin: 20px 0 20px 0;
+  }
+
+  .content {
+    padding: 10px 0 0 0;
+    line-height: 26px;
+  }
+
+  a {
+    display: grid;
+    justify-self: end;
+    color: var(--beige);
+    text-decoration: none;
+    background-color: var(--rosa);
+    padding: 10px;
+    text-align: center;
+    font-family: var(--font-p);
+    padding: 5px 10px 5px 10px;
+  }
+
+  a:hover {
+    background-color: var(--darkgreen);
+  }
+
+  /* v------------------------ desktop styliiing ------------------------v */
+  @media (min-width: 820px) {
+    article {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
+    h2,
+    p {
+      margin: 5px 0 0 10px;
+    }
+
+    p {
+      margin: 10px 0 0 10px;
+    }
+
+    .time {
+      margin: 10px 0 0 10px;
+    }
+
+    .description {
+      margin: 20px 0 20px 10px;
+    }
+
+    /* a {
+        margin-top: -30px;
+      } */
+
+    label {
+      margin: 0 0 0 10px;
+    }
+  }
+</style>
