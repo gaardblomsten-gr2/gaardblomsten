@@ -29,8 +29,32 @@
 /* varaibler til padding og margin constants */
 :root {
   --global-margin-max-width: 1600px;
-  --global-padding-left: 5px 20px 5px 30px;
-  --global-padding-right: 5px 30px 5px 20px;
+  /* margin for alt når det vliver større end 1600 px */
+  --padding-left_mobile: 5px 30px 5px 50px;
+  /* paddin i venstre side på mobil*/
+  --padding-right_mobile: 5px 50px 5px 30px;
+  /* padding i venstre side på mobil */
+  --margin-beige-mobile: 5px 40px 5px 40px;
+  /* margin på beige sektioner på mobil */
+  --margin-workshop-mobile: 10px 40px 10px 40px;
+  /* margin for listy vowe af workshopsne for mobil */
+  --padding-abonnement-mobil: 10px 60px 10px 60px;
+  /* padding for abbonnemnt tilmeldnings sektionen til mobil */
+}
+
+:root {
+  --global-margin-max-width: 1600px;
+  /* margin for alt når det vliver større end 1600 px */
+  --padding-left_desktop: 10px 60px 5px 100px;
+  /* paddin i venstre side på computer*/
+  --padding-desktop: 10px 1000px 10px 60px;
+  /* padding i venstre side på computer */
+  --margin-beige-desktop: 10px 80px 10px 80px;
+  /* margin på beige sektioner på computer */
+  --margin-workshop-mobile: 20px 80px 20px 80px;
+  /* margin for listy vowe af workshopsne for computer */
+  --padding-abonnement-mobil: 20px 120px 20px 120px;
+  /* padding for abbonnemnt tilmeldnings sektionen til computer */
 }
 /* brug af variabel til padding og amrgin */
 /* max-width: var(--global-margin-max-width); */

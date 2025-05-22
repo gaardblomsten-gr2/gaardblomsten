@@ -36,20 +36,20 @@ import Nyhedsbrev from "../components/Nyhedsbrev.astro";
       rel="stylesheet"
     />
   </head>
-  <Header />
   <body>
+    <Header />
     <slot />
+    <Nyhedsbrev />
+    <Footer />
   </body>
-  <Nyhedsbrev />
-  <Footer />
 
   <style>
     html,
     body {
-      margin: 0;
+      max-width: 1000px;
+      margin: 0 auto;
       width: 100%;
       height: 100%;
     }
   </style>
-
 </html>
