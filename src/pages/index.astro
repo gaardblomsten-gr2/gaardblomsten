@@ -40,7 +40,7 @@ import Layout from "../layouts/Layout.astro";
         alt="billede af Maria i blomstermarken"
         class="maria"
       />
-      <div>
+      <div class="">
         <h3>Om <span>Gaardblomsten</span></h3>
         <p>
           Bag Gaardblomsten finder du Maria og Henning. Vi bor på gården
@@ -58,11 +58,13 @@ import Layout from "../layouts/Layout.astro";
 
 <style>
   /* v--------------  STYLING AF 3 BILLEDE-LINKS --------------v */
+
   .grid_1-1-1 {
     display: grid;
     grid-auto-rows: 450px;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 0 auto;
     /* overstående linje 'grid-template-colums' er så det tilpasser sig skærmen og ikke ser mystisk ud på tablet view */
   }
 
@@ -101,6 +103,12 @@ import Layout from "../layouts/Layout.astro";
     padding-right: 20px;
   }
   @media (min-width: 820px) {
+    section {
+      margin: 0 40px 0 40px;
+    }
+    main {
+      max-width: var(--global-margin-max-width);
+    }
     .grid_1-1 {
       display: flex;
       flex-direction: row;
