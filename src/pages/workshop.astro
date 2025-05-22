@@ -4,18 +4,6 @@
 import Event from "../components/Event.astro";
 import Layout from "../layouts/Layout.astro";
 
-// const url =
-//   "https://zzemvifmqicszywpsymv.supabase.co/rest/v1/gaardblomsten_events?select=*";
-
-// const key =
-//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6ZW12aWZtcWljc3p5d3BzeW12Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczOTM5NDYsImV4cCI6MjA2Mjk2OTk0Nn0.6Wo9SZdmqBfwwoXNOJazG-1kSGf7ZjeWJxYh2UQpZ7Y";
-// const options = {
-//   headers: {
-//     //det der står oppe i 'linket' på hjemmesiden
-//     apikey: key,
-//   },
-// };
-
 const data = await fetch(
   "https://zzemvifmqicszywpsymv.supabase.co/rest/v1/gaardblomsten_events?select=*",
   {
@@ -52,6 +40,7 @@ const data = await fetch(
   h1 {
     text-align: center;
     color: var(--darkgreen);
+    padding: 25px 0 10px 0;
   }
 
   main {
