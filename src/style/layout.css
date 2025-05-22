@@ -1,3 +1,16 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/*************** Reset *********************/
+
 body {
   min-height: 100svh;
   display: grid;
@@ -6,8 +19,7 @@ body {
 
 main {
   width: 100%;
-  max-width: 1120px;
+  /* max-width: 1120px; */
   margin-inline: auto;
+  background-color: #faf9f5;
 }
-
-/* reset */
