@@ -22,19 +22,19 @@
 
 /* variabler for font størrelser */
 :root {
-  --fontsize-h1: 60px;
+  --fontsize-h1: 40px;
   --fontsize-h4: 30px;
   --fontsize-p: 16px;
 }
 /* varaibler til padding og margin constants */
 :root {
   --global-margin-max-width: 1600px;
-  /* margin for alt når det vliver større end 1600 px */
-  --padding-left_mobile: 5px 30px 5px 50px;
+  /* margin for alt når det bliver større end 1600 px */
+  --padding-left_mobile: 25px 30px 20px 50px;
   /* paddin i venstre side på mobil*/
-  --padding-right_mobile: 5px 50px 5px 30px;
+  --padding-right_mobile: 25px 50px 20px 30px;
   /* padding i venstre side på mobil */
-  --margin-beige-mobile: 5px 40px 5px 40px;
+  --margin-beige-mobile: 25px 50px 20px 50px;
   /* margin på beige sektioner på mobil */
   --margin-workshop-mobile: 10px 40px 10px 40px;
   /* margin for listy vowe af workshopsne for mobil */
@@ -56,8 +56,11 @@
   --padding-abonnement-mobil: 20px 120px 20px 120px;
   /* padding for abbonnemnt tilmeldnings sektionen til computer */
 }
-/* brug af variabel til padding og amrgin */
-/* max-width: var(--global-margin-max-width); */
+
+:root {
+  --global-padding-bottom-h1: 10px;
+  --global-padding-bottom-h2: 10px;
+}
 
 /* brug af viariablerne til fonte  */
 p {
