@@ -26,6 +26,14 @@
   --fontsize-h4: 30px;
   --fontsize-p: 16px;
 }
+/* varaibler til padding og margin constants */
+:root {
+  --global-margin-max-width: 1600px;
+  --global-padding-left: 5px 20px 5px 30px;
+  --global-padding-right: 5px 30px 5px 20px;
+}
+/* brug af variabel til padding og amrgin */
+/* max-width: var(--global-margin-max-width); */
 
 /* brug af viariablerne til fonte  */
 p {
