@@ -9,21 +9,29 @@ import "../style/style.css";
   <div class="kontakt">
     <p class="bold">Kontakt os:</p>
     <div class="some_link">
-      <img src="/src/assets/facebook.svg" alt="facebook icon" />
+      <img
+        class="some_logo"
+        src="/src/assets/facebook.svg"
+        alt="facebook icon"
+      />
       <a href="https://www.facebook.com/profile.php?id=100083878951607"
         >Gaardblomsten</a
       >
     </div>
     <div class="some_link">
-      <img src="/src/assets/instagram.svg" alt="instagram logo" />
+      <img
+        class="some_logo"
+        src="/src/assets/instagram.svg"
+        alt="instagram logo"
+      />
       <a href="https://www.instagram.com/gaardblomsten/?hl=da">Gaardblomsten</a>
     </div>
     <div class="some_link">
-      <img src="/src/assets/mail.svg" alt="e-mail icon" />
+      <img class="some_logo" src="/src/assets/mail.svg" alt="e-mail icon" />
       <p>gaardblomsten@gmail.com</p>
     </div>
     <div class="some_link">
-      <img src="/src/assets/telefon.svg" alt="telefon icon" />
+      <img class="some_logo" src="/src/assets/telefon.svg" alt="telefon icon" />
       <p>+45 12 34 56 78</p>
     </div>
   </div>
@@ -56,8 +64,7 @@ import "../style/style.css";
   }
 
   .logo {
-    height: 185px;
-    width: 178px;
+    width: 50%;
   }
 
   .logo,
@@ -103,11 +110,15 @@ import "../style/style.css";
     display: flex;
     align-items: center;
     gap: 8px; /* afstand mellem ikon og tekst */
-    width: 50px;
   }
 
   img {
     padding-bottom: 10px;
+  }
+
+  .some_logo {
+    width: 20%;
+    height: auto;
   }
 
   a:hover {
