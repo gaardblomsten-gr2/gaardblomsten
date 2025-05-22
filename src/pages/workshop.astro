@@ -23,7 +23,7 @@ const data = await fetch(
 
 <Layout>
   <main>
-    <h1>Workshop</h1>
+    <h1>Workshop hos <span>Gaardblomsten</span></h1>
     <!-- <Event />-->
     <!-- {data.map((event) => <Event eventdata={event} />)} -->
     {
@@ -47,5 +47,8 @@ const data = await fetch(
     background-color: var(--lightgreen);
   }
 
-  /* test */
+  span {
+    font-family: "Oooh Baby", cursive;
+    font-weight: lighter;
+  }
 </style>
