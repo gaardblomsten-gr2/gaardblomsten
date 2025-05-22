@@ -21,30 +21,30 @@ import Layout from "../layouts/Layout.astro";
     <!-- herunder er billeder med links videre -->
     <section>
       <div class="grid_1-1-1">
-        <div>
-          <a href="/blomster">
-            <img src="/webp/blomster_index.webp" alt="billede af blomster" />
-            <h2>Blomster</h2>
-          </a>
-        </div>
-        <div>
-          <a href="/abonnement">
-            <img
-              src="/webp/abonnement_index.webp"
-              alt="billede af maria med blosmter buket foran ansigt"
-            />
-            <h2>Abonnement</h2>
-          </a>
-        </div>
-        <div>
-          <a href="/workshop">
-            <img
-              src="/webp/workshop.webp"
-              alt="billede af blomster der ligger på et bord"
-            />
-            <h2>Workshop</h2>
-          </a>
-        </div>
+        <!-- <div> -->
+        <a href="/blomster">
+          <img src="/webp/blomster_index.webp" alt="billede af blomster" />
+          <h2>Blomster</h2>
+        </a>
+        <!-- </div>
+        <div> -->
+        <a href="/abonnement">
+          <img
+            src="/webp/abonnement_index.webp"
+            alt="billede af maria med blosmter buket foran ansigt"
+          />
+          <h2>Abonnement</h2>
+        </a>
+        <!-- </div>
+        <div> -->
+        <a href="/workshop">
+          <img
+            src="/webp/workshop.webp"
+            alt="billede af blomster der ligger på et bord"
+          />
+          <h2>Workshop</h2>
+        </a>
+        <!-- </div> -->
       </div>
     </section>
 
@@ -101,8 +101,9 @@ import Layout from "../layouts/Layout.astro";
     /* v-------------- HERO VIDEO STYLING --------------v */
     .hero-video {
       width: 100%;
-      max-width: 1080px;
-      aspect-ratio: 1080 / 438;
+      /* max-width: 1280px; */
+      max-width: 1600px;
+      aspect-ratio: 1280 / 438;
       margin: 0 auto;
       overflow: hidden;
     }
@@ -133,7 +134,13 @@ import Layout from "../layouts/Layout.astro";
       gap: 10px;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       margin: 0 auto;
+      justify-items: center;
       /* overstående linje 'grid-template-colums' er så det tilpasser sig skærmen og ikke ser mystisk ud på tablet view */
+    }
+
+    .grid_1-1-1 img {
+      height: 350px;
+      width: 300px;
     }
 
     .grid_1-1-1 > div {
@@ -143,10 +150,20 @@ import Layout from "../layouts/Layout.astro";
     a {
       text-align: center;
       text-decoration: none;
+      height: 400px;
+      width: 300px;
     }
 
     img {
       justify-content: center;
+    }
+
+    @media (min-width: 800px) {
+      .grid_1-1-1 {
+        gap: 10px;
+        margin-left: 80px;
+        margin-right: 80px;
+      }
     }
 
     /* v--------------  STYLING AF 'om Gaardblomsten'--------------v */
