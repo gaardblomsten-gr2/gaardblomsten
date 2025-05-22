@@ -36,7 +36,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <img
         class="bestilling_img"
-        src="src/assets/img/blomster1.png"
+        src="src/assets/img/workshop1.png"
         alt="billede her"
       />
     </div>
@@ -51,22 +51,22 @@ import Layout from "../layouts/Layout.astro";
         />
         <img
           class="img_fotokarrusel"
-          src="src/assets/img/hjem1.png"
+          src="src/assets/img/workshop1.png"
           alt="billede2"
         />
         <img
           class="img_fotokarrusel"
-          src="src/assets/img/hjem1.png"
+          src="src/assets/img/workshop1.png"
           alt="billede3"
         />
         <img
           class="img_fotokarrusel"
-          src="src/assets/img/hjem1.png"
+          src="src/assets/img/workshop1.png"
           alt="billede4"
         />
         <img
           class="img_fotokarrusel"
-          src="src/assets/img/hjem1.png"
+          src="src/assets/img/workshop1.png"
           alt="billede5"
         />
       </div>
@@ -115,6 +115,9 @@ import Layout from "../layouts/Layout.astro";
 
   /* .grid_1-1 styling gør at billedet går helt ud til kanterne på mobilview  */
 
+  .grid_1-1 {
+    align-items: stretch; /* sikrer at begge kolonner har samme højde */
+  }
   .grid_1-1 > .bestilling_img {
     width: 100vw;
     max-width: none;
@@ -123,22 +126,20 @@ import Layout from "../layouts/Layout.astro";
   }
   /* padding på teskten i grid_1-1 */
   .bestilling {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: var(--padding-right_mobile);
   }
+  /* padding på teksten i grid_1-1 computer */
   .gaardblomstens_vejbod {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: var(--padding-left_mobile);
   }
   /* padding for h1 top */
   h1 {
     padding-top: 40px;
     padding-bottom: 20px;
   }
-  p {
-    padding-bottom: 20px;
+  .gallery {
+    margin: var(--margin-beige-mobile);
   }
-
   /* baggrundsfarve på hele siden*/
   body {
     background-color: var(--beige);
@@ -172,8 +173,6 @@ import Layout from "../layouts/Layout.astro";
     gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
-    margin-left: 20px;
-    padding-bottom: 60px;
   }
 
   /* for at få praktisk info div beige */
@@ -234,6 +233,7 @@ import Layout from "../layouts/Layout.astro";
     .grid_1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 20px; /* afstand mellem kolonnerne */
       /* align-items: start; justerer elementerne i toppen */
     }
@@ -252,11 +252,11 @@ import Layout from "../layouts/Layout.astro";
     }
     .grid_1-1 {
       position: relative;
-      left: 50%;
+      /* left: 50%;
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      width: 100vw;
+      width: 100vw; */
       /* background-color: var(--lightgreen); */
     }
 
@@ -270,15 +270,7 @@ import Layout from "../layouts/Layout.astro";
       height: auto;
       display: block;
     }
-    /* padding på teksten i grid_1-1 computer */
-    .bestilling {
-      padding-left: 50px;
-      padding-right: 70px;
-    }
-    .gaardblomstens_vejbod {
-      padding-left: 70px;
-      padding-right: 50px;
-    }
+
     p {
       padding-bottom: 10px;
     }
