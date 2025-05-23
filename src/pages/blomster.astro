@@ -32,13 +32,14 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <img
         class="bestilling_img"
-        src="/webp/bestilling.webp"
+        src="/webp/bestilling-short.webp"
         alt="billede af buket på bænk"
       />
     </div>
 
+    <h2 class="tidligere_buketter">Tidligere buketter</h2>
+
     <div class="gallery">
-      <h2 class="tidligere_buketter">Tidligere buketter</h2>
       <div class="flex">
         <img
           class="img_fotokarrusel"
@@ -123,7 +124,6 @@ import Layout from "../layouts/Layout.astro";
   }
   .gallery {
     margin: var(--margin-beige-mobile);
-    padding-top: 25px;
     padding-bottom: 25px;
     /* background-color: var(--beige); */
   }
@@ -146,6 +146,9 @@ import Layout from "../layouts/Layout.astro";
   }
   /*padding for tidligere buketter sektionen */
   .tidligere_buketter {
+    text-align: center;
+    font-size: var(--fontsize-h2);
+    padding-top: 60px;
   }
 
   /* padding for der hvor der står praktisk info og så er der li under, loven om nærhed */
