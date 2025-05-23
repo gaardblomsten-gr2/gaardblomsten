@@ -22,7 +22,9 @@
 
 /* variabler for font størrelser */
 :root {
-  --fontsize-h1: 40px;
+  --fontsize-h1: 45px;
+  --fontsize-h2: 30px;
+  --fontsize-h3: 25px;
   --fontsize-h4: 30px;
   --fontsize-p: 16px;
 }
@@ -53,7 +55,7 @@
   /* margin på beige sektioner på computer */
   --margin-workshop-mobile: 20px 80px 20px 80px;
   /* margin for listy vowe af workshopsne for computer */
-  --padding-abonnement-mobil: 20px 120px 20px 120px;
+  --padding-abonnement-desktop: 20px 250px 20px 250px;
   /* padding for abbonnemnt tilmeldnings sektionen til computer */
 }
 
