@@ -26,17 +26,17 @@
   --fontsize-h2: 30px;
   --fontsize-h3: 25px;
   --fontsize-h4: 30px;
-  --fontsize-p: 16px;
+  --fontsize-p: 17px;
 }
 /* varaibler til padding og margin constants */
 :root {
   --global-margin-max-width: 1600px;
   /* margin for alt når det bliver større end 1600 px */
-  --padding-left_mobile: 25px 30px 20px 70px;
-  /* paddin i venstre side på mobil*/
-  --padding-right_mobile: 25px 70px 20px 30px;
-  /* padding i venstre side på mobil */
-  --margin-beige-mobile: 25px 50px 20px 50px;
+  --padding-left_mobile: 30px 70px 100px 30px;
+  /* padding i venstre side på mobil*/
+  --padding-right_mobile: 30px 70px 100px 30px;
+  /* padding i højre side på mobil */
+  --margin-beige-mobile: 25px 50px 70px 50px;
   /* margin på beige sektioner på mobil */
   --margin-workshop-mobile: 10px 40px 10px 40px;
   /* margin for listy vowe af workshopsne for mobil */
@@ -47,10 +47,10 @@
 :root {
   --global-margin-max-width: 1600px;
   /* margin for alt når det vliver større end 1600 px */
-  --padding-left_desktop: 10px 60px 5px 100px;
-  /* paddin i venstre side på computer*/
-  --padding-desktop: 10px 1000px 10px 60px;
-  /* padding i venstre side på computer */
+  --padding-left_desktop: 30px 100px 100px 100px;
+  /* padding i venstre side på computer*/
+  --padding-desktop: 30px 100px 100px 100px;
+  /* padding i højre side på computer */
   --margin-beige-desktop: 10px 80px 10px 80px;
   /* margin på beige sektioner på computer */
   --margin-workshop-mobile: 20px 80px 20px 80px;

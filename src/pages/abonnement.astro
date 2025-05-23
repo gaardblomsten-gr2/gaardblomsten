@@ -38,7 +38,7 @@ import Layout from "../layouts/Layout.astro";
             Nyd friske blomster hver uge. Ingen buketter er ens, men afhænger af
             måneden.
           </p>
-          <p><strong>Vælg mellem:</strong></p>
+          <p class="valg_mellem"><strong>Vælg mellem:</strong></p>
           <p class="uger">4 uger - 700 kr.</p>
           <p class="uger">6 uger - 1050 kr.</p>
         </div>
@@ -102,7 +102,7 @@ import Layout from "../layouts/Layout.astro";
           marken, bliver nænsomt høstet og bundet med et personligt præg, før de
           lander hos dig.
         </p>
-        <p class="beige padding_bund">
+        <p class="beige">
           Hver buket er unik, sammensat af det, marken byder på netop den uge.
           Da vi dyrker alle blomster på friland og følger naturens rytme, er det
           vejret, der bestemmer, hvornår de er klar. Til gengæld kan vi love dig
@@ -126,6 +126,8 @@ import Layout from "../layouts/Layout.astro";
   img {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    width: 100%;
+    height: auto;
   }
 
   h1 {
@@ -133,24 +135,32 @@ import Layout from "../layouts/Layout.astro";
     font-size: var(--fontsize-h1);
   }
 
+  h1 {
+    padding-top: 40px;
+  }
+
   .obs {
     text-align: center;
+    padding-bottom: 40px;
   }
 
   h2 {
     font-family: "Afacad", sans-serif;
     font-size: var(--fontsize-h2);
-    margin: 10px 0 10px 0;
+    margin: 30px 0 10px 0;
   }
 
   h3 {
     font-family: "Libre Bodoni", serif;
-    text-align: center;
-    font-size: var(--fontsize-h3);
+    font-size: 35px;
   }
 
   .uger {
     line-height: 20px;
+  }
+
+  .valg_mellem {
+    padding-top: 10px;
   }
 
   .section_lightgreen {
@@ -160,12 +170,6 @@ import Layout from "../layouts/Layout.astro";
   .grid_1-1 {
     background-color: var(--mediumgreen);
     display: grid;
-    grid-template-rows: 1fr 1fr;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
   }
 
   h1,
@@ -173,21 +177,21 @@ import Layout from "../layouts/Layout.astro";
   h3,
   p {
     color: var(--darkgreen);
-    padding: 5px 0 5px 0;
   }
 
   .beige {
     color: var(--beige);
   }
-  .h3_abonnement {
-    padding-top: 30px;
-  }
-  .padding_bund {
-    padding-bottom: 40px;
+  .h3_abonnement,
+  .beige {
+    margin-top: 20px;
+    padding-bottom: 10px;
   }
 
   .overskrift_form {
-    padding: 40px 0 0 0;
+    font-size: 30px;
+    padding: 40px 10px 0 10px;
+    text-align: center;
   }
 
   .form {
@@ -246,7 +250,13 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .down_section {
-    margin: var(--padding-left_mobile);
+    padding: var(--padding-left_mobile);
+  }
+
+  .abonnement_billed {
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
   }
 
   /* til computer under */
@@ -286,6 +296,7 @@ import Layout from "../layouts/Layout.astro";
     /* Flyt tekstsektionen til første kolonne */
     .down_section {
       grid-column: 1;
+      padding: var(--padding-left_desktop);
     }
   }
 </style>
