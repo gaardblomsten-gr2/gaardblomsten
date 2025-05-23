@@ -10,8 +10,10 @@ import Layout from "../layouts/Layout.astro";
         alt="billede af blomsterbuket på en bænk"
       />
       <p class="p_hero">
-        Et abonnement er en perfekt måde at skabe en dejlig stemning i dit hjem,
-        i din virksomhed eller give i gave til en, der står dig nær.
+        <strong>
+          Et abonnement er en perfekt måde at skabe en dejlig stemning i dit
+          hjem, i din virksomhed eller give i gave til en, der står dig nær.
+        </strong>
       </p>
       <a class="a_hero" href="">Start abonnement</a>
     </section>
@@ -98,7 +100,7 @@ import Layout from "../layouts/Layout.astro";
           marken, bliver nænsomt høstet og bundet med et personligt præg, før de
           lander hos dig.
         </p>
-        <p class="beige">
+        <p class="beige padding_bund">
           Hver buket er unik, sammensat af det, marken byder på netop den uge.
           Da vi dyrker alle blomster på friland og følger naturens rytme, er det
           vejret, der bestemmer, hvornår de er klar. Til gengæld kan vi love dig
@@ -127,9 +129,12 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .p_hero {
-    color: var(--beige);
+    color: var(--darkgreen);
     padding: 0 0 60px 10px;
     place-self: end start;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .a_hero {
@@ -190,13 +195,16 @@ import Layout from "../layouts/Layout.astro";
   .beige {
     color: var(--beige);
   }
+  .padding_bund {
+    padding-bottom: 40px;
+  }
 
   a:hover {
     background-color: var(--darkgreen);
   }
 
   .overskrift_form {
-    padding: 20px 0 0 0;
+    padding: 40px 0 0 0;
   }
 
   .form {
@@ -301,9 +309,10 @@ import Layout from "../layouts/Layout.astro";
       max-width: 50%;
     } */
     .p_hero {
-      max-width: 480px;
+      max-width: 600px;
       overflow: hidden;
       text-overflow: ellipsis;
+      font-size: 20px;
     }
   }
 </style>
