@@ -258,6 +258,8 @@ import Layout from "../layouts/Layout.astro";
     margin: var(--padding-left_mobile);
   }
 
+  /* til computer under */
+
   @media (min-width: 800px) {
     .grid_1-1-1 {
       display: grid;
@@ -275,19 +277,29 @@ import Layout from "../layouts/Layout.astro";
       gap: 60px;
     }
 
-    .grid_1-1 {
+    /* .grid_1-1 {
       display: flex;
       flex-direction: row;
+    } */
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
 
+    /* Flyt billedet til anden kolonne */
     .abonnement_billed {
-      order: 2;
+      grid-column: 2;
     }
 
+    /* Flyt tekstsektionen til første kolonne */
     .down_section {
+      grid-column: 1;
+    }
+
+    /* .down_section {
       order: 1;
       max-width: 50%;
-    }
+    } */
     .p_hero {
       max-width: 480px;
       overflow: hidden;
