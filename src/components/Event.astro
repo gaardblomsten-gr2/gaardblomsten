@@ -1,7 +1,33 @@
 ---
-//@ts-nocheck
 import "../style/style.css";
 const { eventdata } = Astro.props;
+
+function formatDate(dateString) {
+  // funktionen laves, der tager en dato som tekst
+  const date = new Date(dateString); // her laves det om til et Date-objekt, som javascript forstår
+  return new Intl.DateTimeFormat("da-DK", {
+    // formaterer datoen om til da-DK som er dansk
+    weekday: "long", // giver fx lørdag
+    day: "numeric", // dato
+    month: "long", // måned
+    year: "numeric", // år
+  }).format(date); // denne gør det hele til en læsbar tekst, som giver fx lørdag den 14. juni 2025
+}
+
+function capitalizeFirstLetter(str) {
+  // funktionen tager fat i en tekst fx lørdag
+  return str.charAt(0).toUpperCase() + str.slice(1); // str.charAt(0) tager fat i første bogstav, .toUppercase() gør det til et stort bogstav, str.slice(1) tager resten af teksten og sætter ind fx "ørdag den 14. juni"
+} // alt dette bliver til Lørdag den 14. juni 2025
+
+function formatTimeRange(startTime, endTime) {
+  // funktionen tager fat i to tidspunkter, starttid og sluttid
+  const format = (time) => {
+    // her laves en funktion
+    const [hour, minute] = time.split(":"); // time.split(":") deler 09:00 op i 09 og 00
+    return `${hour}.${minute}`; // her sættes 09:00 og 00 sammen med punktil til 09.00
+  };
+  return `${format(startTime)}–${format(endTime)}`; // funktionen bruges to gange med starttid og sluttid, så det bliver til 09.00-12.00
+}
 ---
 
 <article>
@@ -9,23 +35,17 @@ const { eventdata } = Astro.props;
   <div class="info">
     <h2>{eventdata.title}</h2>
     <p>{eventdata.adress}</p>
-    <p class="bold">{eventdata.date}</p>
-    <p class="time">Kl. {eventdata.time} - {eventdata.time_end}</p>
+    <p class="bold">{capitalizeFirstLetter(formatDate(eventdata.date))}</p>
+    <!-- her bruges funktionen som gør startbogstavet til stort bogstav, sammen med funktionen som gør datoen til da-DK -->
+    <p class="time">{formatTimeRange(eventdata.time, eventdata.time_end)}</p>
+    <!-- her bruges funktionen til at formaterer tidspunktet -->
     <p class="description">{eventdata.description}</p>
-
     <div class="laes-mere">
       <label for="workshop1">Læs mere </label>
-
-      <!-- checkbox er en 'knap' der skal markeres, så man kan se hvilken der skal foldes ud -->
-
       <div class="content">
-        <!-- skal have indsat 'usynlig' klassen for at teksten bliver skjult -->
-        <p>
-          {eventdata.read_more}
-        </p>
+        <p>{eventdata.read_more}</p>
         <p><strong>Pris: </strong>{eventdata.price}</p>
       </div>
-
       <a href="">Tilmeld her</a>
     </div>
   </div>
@@ -39,17 +59,18 @@ const { eventdata } = Astro.props;
     // betyder: 'querySelectorAll' betyder den vælger alle med classen '.laes-mere', ikke kun den første
 
     toggleBoxes.forEach((box) => {
-      // betyder: går igennem dem én ad gangen
       const label = box.querySelector("label");
       const content = box.querySelector(".content");
       // betyder: inde i boxen finder vi 'label' og 'content'
 
-      label.addEventListener("click", () => {
-        // betyder: når man klikker på label altså 'læs mere/læs mindre'
-        content.classList.toggle("usynlig");
-        // betyder: fjerner eller tilføjer klassen 'usynlig' så teksten vises eller ej
+      content.classList.add("usynlig"); // denne linje sørger for at indholdet er skjult ved sideindlæsning
 
-        // Opdater tekst på label
+      label.addEventListener("click", () => {
+        // betyder: når man klikker på label altså "læs mere/læs mindre"
+        content.classList.toggle("usynlig");
+        // betyder: fjerner eller tilføjer klassen "usynlig" så teksten vises eller ej
+
+        // opdater teksten på label fra læs mere til læs mindre
         label.textContent = content.classList.contains("usynlig")
           ? "Læs mere"
           : "Læs mindre";
