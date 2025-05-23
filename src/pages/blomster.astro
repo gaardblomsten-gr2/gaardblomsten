@@ -42,18 +42,8 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <div class="gallery">
-      <h2 class="sæsonens_favoritter">Sæsonens favoritter</h2>
+      <h2 class="tidligere_buketter">Tidligere buketter</h2>
       <div class="flex">
-        <img
-          class="img_fotokarrusel"
-          src="src/assets/img/hjem1.png"
-          alt="billede1"
-        />
-        <img
-          class="img_fotokarrusel"
-          src="src/assets/img/workshop1.png"
-          alt="billede2"
-        />
         <img
           class="img_fotokarrusel"
           src="src/assets/img/workshop1.png"
@@ -137,6 +127,8 @@ import Layout from "../layouts/Layout.astro";
   }
   .gallery {
     margin: var(--margin-beige-mobile);
+    padding-top: 25px;
+    padding-bottom: 25px;
     /* background-color: var(--beige); */
   }
   /* al teskt darkgreen */
@@ -159,6 +151,9 @@ import Layout from "../layouts/Layout.astro";
   span {
     font-family: "Oooh Baby", cursive;
     font-weight: lighter;
+  }
+  /*padding for tidligere buketter sektionen */
+  .tidligere_buketter {
   }
 
   /* padding for der hvor der står praktisk info og så er der li under, loven om nærhed */
@@ -272,6 +267,10 @@ import Layout from "../layouts/Layout.astro";
 
     p {
       padding-bottom: 10px;
+    }
+    .flex {
+      overflow-x: none;
+      overflow-y: none;
     }
   }
   /*********************************************** FOR TABLET *****************************************************/
