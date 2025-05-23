@@ -9,13 +9,13 @@ import Layout from "../layouts/Layout.astro";
         src="/webp/hero_abonnement.webp"
         alt="billede af blomsterbuket på en bænk"
       />
-      <p class="p_hero">
+      <!-- <p class="p_hero">
         <strong>
           Et abonnement er en perfekt måde at skabe en dejlig stemning i dit
           hjem, i din virksomhed eller give i gave til en, der står dig nær.
         </strong>
-      </p>
-      <a class="a_hero" href="">Start abonnement</a>
+      </p> -->
+      <!-- <a class="a_hero" href="">Start abonnement</a> -->
     </section>
     <section class="step_by_step">
       <h1>Sådan fungerer det</h1>
@@ -123,36 +123,14 @@ import Layout from "../layouts/Layout.astro";
     display: grid;
   }
 
-  img,
-  .p_hero,
-  .a_hero {
+  img {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
 
-  .p_hero {
-    color: var(--darkgreen);
-    padding: 0 0 60px 10px;
-    place-self: end start;
-    max-width: 400px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .a_hero {
-    place-self: end start;
-    margin: 0 0 20px 10px;
-    color: var(--beige);
-    text-decoration: none;
-    background-color: var(--rosa);
-    padding: 10px;
-    text-align: center;
-    font-family: var(--font-p);
-    padding: 5px 10px 5px 10px;
-  }
-
   h1 {
     text-align: center;
+    font-size: var(--fontsize-h1);
   }
 
   .obs {
@@ -161,12 +139,14 @@ import Layout from "../layouts/Layout.astro";
 
   h2 {
     font-family: "Afacad", sans-serif;
+    font-size: var(--fontsize-h2);
     margin: 10px 0 10px 0;
   }
 
   h3 {
     font-family: "Libre Bodoni", serif;
     text-align: center;
+    font-size: var(--fontsize-h3);
   }
 
   .uger {
@@ -206,10 +186,6 @@ import Layout from "../layouts/Layout.astro";
     padding-bottom: 40px;
   }
 
-  a:hover {
-    background-color: var(--darkgreen);
-  }
-
   .overskrift_form {
     padding: 40px 0 0 0;
   }
@@ -247,7 +223,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .andet {
-    padding: 40px;
+    padding: 70px;
   }
 
   .bestilling {
@@ -282,6 +258,10 @@ import Layout from "../layouts/Layout.astro";
       justify-items: center;
     }
 
+    .section_lightgreen {
+      padding: var(--padding-abonnement-desktop);
+    }
+
     .del_3 {
       max-width: 80%;
     }
@@ -292,10 +272,6 @@ import Layout from "../layouts/Layout.astro";
       gap: 60px;
     }
 
-    /* .grid_1-1 {
-      display: flex;
-      flex-direction: row;
-    } */
     .grid_1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -310,17 +286,6 @@ import Layout from "../layouts/Layout.astro";
     /* Flyt tekstsektionen til første kolonne */
     .down_section {
       grid-column: 1;
-    }
-
-    /* .down_section {
-      order: 1;
-      max-width: 50%;
-    } */
-    .p_hero {
-      max-width: 600px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: 20px;
     }
   }
 </style>
