@@ -93,7 +93,9 @@ import Layout from "../layouts/Layout.astro";
         alt="billede af Maria der plukker blomster"
       />
       <div class="down_section">
-        <h3 class="beige">Et abonnement hos <span>Gaardblomsten</span></h3>
+        <h3 class="beige h3_abonnement">
+          Et abonnement hos <span>Gaardblomsten</span>
+        </h3>
         <p class="beige">
           Fra juli til august kan du få glæden af friske, håndbundne buketter
           hver uge med vores blomsterabonnement. Alle blomster er dyrket her på
@@ -177,6 +179,8 @@ import Layout from "../layouts/Layout.astro";
 
   .grid_1-1 {
     background-color: var(--mediumgreen);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
   }
 
   img {
@@ -194,6 +198,9 @@ import Layout from "../layouts/Layout.astro";
 
   .beige {
     color: var(--beige);
+  }
+  .h3_abonnement {
+    padding-top: 30px;
   }
   .padding_bund {
     padding-bottom: 40px;
@@ -292,6 +299,7 @@ import Layout from "../layouts/Layout.astro";
     .grid_1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: none;
     }
 
     /* Flyt billedet til anden kolonne */
