@@ -31,7 +31,7 @@ function formatTimeRange(startTime, endTime) {
 ---
 
 <article>
-  <img src="/src/assets/img/workshop1.png" alt="billede fra workshop" />
+  <img src={`/workshop/${eventdata.img}`} />
   <div class="info">
     <h2>{eventdata.title}</h2>
     <p>{eventdata.adress}</p>
@@ -128,8 +128,8 @@ function formatTimeRange(startTime, endTime) {
   }
 
   article {
-    margin: 20px;
-    padding: 20px;
+    margin: 20px 20px 60px 20px;
+    padding: 30px 20px 20px 30px;
   }
 
   p,
@@ -186,27 +186,23 @@ function formatTimeRange(startTime, endTime) {
 
     h2,
     p {
-      margin: 5px 0 0 10px;
+      margin: 5px 0 0 15px;
     }
 
     p {
-      margin: 10px 0 0 10px;
+      margin: 10px 0 0 15px;
     }
 
     .time {
-      margin: 10px 0 0 10px;
+      margin: 10px 0 0 15px;
     }
 
     .description {
-      margin: 20px 0 20px 10px;
+      margin: 20px 0 75px 15px;
     }
 
-    /* a {
-        margin-top: -30px;
-      } */
-
     label {
-      margin: 0 0 0 10px;
+      margin: 0 0 0 15px;
     }
   }
 </style>
