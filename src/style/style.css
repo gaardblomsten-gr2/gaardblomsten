@@ -30,9 +30,9 @@
 :root {
   --global-margin-max-width: 1600px;
   /* margin for alt når det bliver større end 1600 px */
-  --padding-left_mobile: 25px 30px 20px 50px;
+  --padding-left_mobile: 25px 30px 20px 70px;
   /* paddin i venstre side på mobil*/
-  --padding-right_mobile: 25px 50px 20px 30px;
+  --padding-right_mobile: 25px 70px 20px 30px;
   /* padding i venstre side på mobil */
   --margin-beige-mobile: 25px 50px 20px 50px;
   /* margin på beige sektioner på mobil */
