@@ -127,7 +127,7 @@ import Layout from "../layouts/Layout.astro";
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 
   h1 {
@@ -227,10 +227,11 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .andet {
-    padding: 70px;
+    padding: 10px 0 50px 10px;
+    min-width: 250px;
   }
 
-  .bestilling {
+  /* .bestilling {
     color: var(--beige);
     text-decoration: none;
     background-color: var(--rosa);
@@ -242,6 +243,24 @@ import Layout from "../layouts/Layout.astro";
     margin-right: auto;
     margin-top: 30px;
     margin-bottom: 60px;
+  }
+
+  a:hover {
+    background-color: var(--darkgreen);
+  } */
+
+  .bestilling {
+    color: var(--beige);
+    text-decoration: none;
+    background-color: var(--rosa);
+    text-align: center;
+    font-family: var(--font-p);
+    padding: 5px 10px 5px 10px;
+    width: fit-content;
+    min-width: 90px;
+    margin: 0 auto;
+    height: 35px;
+    margin-top: 15px;
   }
 
   a:hover {
@@ -284,6 +303,10 @@ import Layout from "../layouts/Layout.astro";
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
+    }
+
+    .andet {
+      padding: 0 0 50px 10px;
     }
 
     .grid_1-1 {
