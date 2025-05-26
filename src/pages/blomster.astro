@@ -41,21 +41,9 @@ import Layout from "../layouts/Layout.astro";
 
     <div class="gallery">
       <div class="flex">
-        <img
-          class="img_fotokarrusel"
-          src="src/assets/img/workshop1.png"
-          alt="billede3"
-        />
-        <img
-          class="img_fotokarrusel"
-          src="src/assets/img/workshop1.png"
-          alt="billede4"
-        />
-        <img
-          class="img_fotokarrusel"
-          src="src/assets/img/workshop1.png"
-          alt="billede5"
-        />
+        <img class="img_fotokarrusel" src="/webp/buket1.webp" alt="billede3" />
+        <img class="img_fotokarrusel" src="/webp/buket2.webp" alt="billede4" />
+        <img class="img_fotokarrusel" src="/webp/buket3.webp" alt="billede5" />
       </div>
     </div>
 
@@ -128,6 +116,7 @@ import Layout from "../layouts/Layout.astro";
     /* background-color: var(--beige); */
   }
   /* al tekst darkgreen */
+
   * {
     color: var(--darkgreen);
   }
@@ -163,6 +152,13 @@ import Layout from "../layouts/Layout.astro";
     overflow-y: hidden;
   }
 
+  @media (min-width: 800px) {
+    .flex {
+      justify-content: center;
+      gap: 50px;
+    }
+  }
+
   /* for at få praktisk info div beige */
   .bestilling {
     color: var(--beige);
@@ -190,6 +186,20 @@ import Layout from "../layouts/Layout.astro";
     width: 100%;
     height: auto;
     object-fit: cover;
+  }
+
+  /* .img_fotokarrusel {
+    max-width: 350px;
+    max-height: 261px;
+  } */
+
+  @media (min-width: 800px) {
+    .img_fotokarrusel {
+      max-width: none;
+      max-height: none;
+      height: 100%; /* Eller auto, alt efter hvad du vil opnå */
+      width: auto; /* Eller 100% hvis du vil fylde hele flex-containerens højde */
+    }
   }
 
   /* styling for list elementerne */
