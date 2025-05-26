@@ -9,45 +9,39 @@ Skriv derfor jeres fælles retningslinjer for punkterne herunder(tilføj gerne f
 Beslut, hvordan I vil organisere jeres projekt – struktur for mapper og filer.
 
 - Hvordan organiserer I billeder, fonte og andre ressourcer?
-  Vi opretter "img" mappen der indeholder vores billeder under mappen assets. Fonte samles i en mappe "fonts" under src-mappen. Stylemappen kalder vi "style" under src-mappen.
+  Vi opretter og navngiver mapper efter indholdet. Fx. “img”-mappe, som indeholder vores billeder. Stylemappen kalder vi “style”, som indeholder layout.css og style.css under src-mappen.
 
 - Hvor placerer I boilerplate?(fx CSS- og JavaScript-filer, der bruges på tværs af projektet)
-  Vores generelle layout kan findes i vores fil "layout.astro" under src i layouts
-
-- Hvor placerer I HTML, CSS- og JavaScript-filer til fx detaljevisning og listevisning?
-  Disse filer kommer til at ligge i src. Vi arbejder i astro så alle vores filer ligger under src
+  Vores generelle layout kan findes i vores fil “Layout.astro" under src. Derudover har vi style i hver enkel page og hver enkelt komponent. Det samme gælder vores Javascript, som også er placeret inde i selve pagen eller komponenten.
 
 ## Navngivning:
 
 Beslut hvordan i vil navngive filer og mapper for at sikre en ensartet struktur og undgå forvirring.
 
 - Hvordan navngiver I filnavne? (fx små bogstaver, ingen mellemrum, brug af - eller _)
-  Vi skriver med små bogstaver og benytter navngivnin g fra vores layout diagram. Vi bruger underscore (_) som erstatning for mellemrum, men benytter bindestreg (-) til at understrge at noget høre sammen.
+  Vi navngiver med små bogstaver og benytter navngivning fra vores layoutdiagram. Vi bruger underscore (_) som erstatning for mellemrum, men benytter bindestreg (-) til at understrge at noget høre sammen.
 - Hvordan sikre I at det er til at forstå hvilke HTML-, CSS- og JavaScript-filer der høre sammen?
-  Vi koder i astro så der styles i gældende fil, og der vil derfor ikke oprettes css-filer til pågælende html-filer.
+  Vi har taget en fælles beslutning om at vi koder i Astro, så der styles i gældende filer, og der vil derfor ikke blive brug for at oprettet CSS-filer til HTML-filer.
 
 ## Git branches:
 
-- Hvordan navngiver I branches, så alle kan forstår hvem der arbejder i branchen og på hvad?(fx feature-lotte-formular)
-  Vi navngiver på følgende måde:
-  navn_feature fx cathrine_blomster eller cathrine_header.
+- Hvordan navngiver I branches, så alle kan forstår hvem der arbejder i branchen og på hvad? (fx feature-lotte-formular)
+  Vi navngiver branches på følgende måde: navn_header, fx cathrine_header.
 
 ## Arbejdsflow:
 
 - Hvordan fordeler I arbejdet, så I undgår at flere arbejder i de samme filer samtidigt?
-  Vi har 4 sider der skal kodes. Vi iddeler så vi koder en side hver, men koder sammen den fjerde side, som er workshop-siden hvor vi implementer data via supabase.
+  I alt har vi 4 pages der skal kodes. I starten af kodningsprocessen fordeler vi hvilke sider vi hver især skal kode, og fordeler komponenter mellem os. Den fjerde page, som er workshop, hvor vi arbejder med API via Supabase, udvikler vi sammen, så alle er med indover hvad der sker.
 - Hvordan sikrer I, at commit-beskeder er beskrivende?
-  vi navngiver commits på følgende måde:
-  add/fix/delete_feature
-  et eksempel: add_images
+  Vi navngiver commit-beskeder på følgende måde:
+  add/fix/delete/, fx add_images
 - Hvordan kommunikerer i om ændringer i main branchen når feature merges?
-  Vi snakker alle sammen om det, og merhcer ikke før alle er sammen.
+  Vi sørger for at vi sidder fysisk sammen, når der merges og trykker pull fra main en ad gangen, så vi er sikre på alles kode bliver opdateret korrekt.
 
 ## Kode:
 
-- Hvordan skriver i funktioner i JavaScript?(fx med function keyword eller som arrow functions)
 - Skal filer have korte forklaringer som kommentarer?
-  Ja små forklarende tekster
+  Vi har forsøgt at sørge for, at alt ny kode, som kan være svært at huske i hovedet, er kommenteret, så alle i gruppen nemt kan læse hvad der bliver gjort i koden.
 
 # Funktionalitet
 
@@ -57,75 +51,48 @@ Dette afsnit skal forklare hvad I konkret har arbejde med, for at udvikle websit
 - Filtrering af produkter baseret på brugerens valg.
 - Dynamisk visning af produkter i HTML.
 
-Brug korte beskrivelser, som i eksemplerne herover
+Brug korte beskrivelser, som i eksemplerne herover.
+
+- Hentning af workshop fra API, Supabase.
+- Ændring af dato og tid, ved hjælp af formatDate og formatTimeRange.
+- Ændring af stort startbogstav ved hjælp af capitalizeFirstLetter.
+- Arrow function kode.
 
 # API endpoints
 
 Dette afsnit skal liste de endpoints fra API'et i har benyttet:
-
-- (fx. https://dummyjson.com/products)
+https://supabase.com/dashboard/project/zzemvifmqicszywpsymv/editor/17250
 
 # Dokumentation af Funktion
 
-Dette afsnit skal beskrive en funktion I selv har udviklet. Det kunne eksempelvis være en funktion der generere en listen over fx. produkter:
+Dette afsnit skal beskrive en funktion I selv har udviklet. Det kunne eksempelvis være en funktion der generere en liste over fx. produkter:
 
-- Beskrivelse: Hvad gør funktionen? Hvordan spiller den sammen med resten af koden?
-- Parametre: Hvilke input forventes (fx en værdi fra en dropdown eller URL'en)?
-- Returnerer: Beskriv, om funktionen returnerer en værdi eller blot manipulerer DOM’en.
-- Eksempel på brug: Indsæt funktions-koden herunder(der hvor koden er i eksemplet) og vis, hvordan funktionen kaldes:
+Nedenunder ses en funktion vi selv har udviklet, for vores workshop side, hvor vi har flere events og til hvert af dem en knap, der kan trykkes på, så man kan læse mere og sektionen foldes ud.
 
-```javascript
-//funktionens kode:
-function voresFunktion(sprog) {
-  console.log(`${sprog} syntax highlighting`);
-}
-//hvordan funktionen kaldes:
-voresFunktion("JavaScript");
-```
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // betyder: når sidens indhold er loadet, så starter koden
+    const toggleBoxes = document.querySelectorAll(".laes-mere");
+    // betyder: 'querySelectorAll' betyder den vælger alle med classen '.laes-mere', ikke kun den første
 
-```sh
-npm create astro@latest -- --template basics
-```
+toggleBoxes.forEach((box) => {
+      const label = box.querySelector("label");
+      const content = box.querySelector(".content");
+      // betyder: inde i boxen finder vi 'label' og 'content'
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+content.classList.add("usynlig"); // denne linje sørger for at indholdet er skjult ved sideindlæsning fra starten
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+label.addEventListener("click", () => {
+        // betyder: når man klikker på label altså "læs mere/læs mindre"
+        content.classList.toggle("usynlig");
+        // betyder: fjerner eller tilføjer klassen "usynlig" så teksten vises eller ej
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+// opdater teksten på label fra læs mere til læs mindre
+        label.textContent = content.classList.contains("usynlig")
+          ? "Læs mere"
+          : "Læs mindre";
+        // betyder: dette gør at teksten ændrer sig fra læs mere og læs mindre
+      });
+    });
+  });
+</script>
