@@ -20,22 +20,11 @@ import Layout from "../layouts/Layout.astro";
 
     <!-- herunder er billeder med links videre -->
     <section>
-      <img
-        class="baggrundsblomst1"
-        src="webp/blomst1.webp"
-        alt="billede af baggrundsblomst"
-      />
-
-      <img
-        class="baggrundsblomst2"
-        src="webp/blomst1.webp"
-        alt="billede af baggrundsblomst"
-      />
       <div class="grid_1-1-1">
         <!-- <div> -->
         <a href="/blomster">
           <img src="/webp/blomster_index.webp" alt="billede af blomster" />
-          <h2>Blomster</h2>
+          <h2 class="hover_link">Blomster</h2>
         </a>
         <!-- </div>
         <div> -->
@@ -46,14 +35,14 @@ import Layout from "../layouts/Layout.astro";
             src="/webp/workshop.webp"
             alt="billede af blomster der ligger på et bord"
           />
-          <h2>Workshops</h2>
+          <h2 class="hover_link">Workshops</h2>
         </a>
         <a href="/abonnement">
           <img
             src="/webp/abonnement_index.webp"
             alt="billede af maria med blosmter buket foran ansigt"
           />
-          <h2>Abonnement</h2>
+          <h2 class="hover_link">Abonnement</h2>
         </a>
         <!-- </div> -->
       </div>
@@ -61,11 +50,6 @@ import Layout from "../layouts/Layout.astro";
 
     <!-- herunder kommer 'Om Gaardblomsten' -->
     <div class="grid_1-1">
-      <img
-        class="baggrundsblomst3"
-        src="webp/blomst1.webp"
-        alt="billede af baggrundsblomst"
-      />
       <img
         src="/webp/gaardblomsten_om.webp"
         alt="billede af Maria i blomstermarken"
@@ -135,52 +119,11 @@ import Layout from "../layouts/Layout.astro";
     }
 
     /* v--------------  STYLING AF 3 BILLEDE-LINKS --------------v */
-    section {
-      position: relative;
-      background-color: #f2efe8;
-      overflow: hidden;
-    }
-
-    .baggrundsblomst1 {
-      position: absolute;
-      z-index: 0; /* ikke -1, det kan være for langt bagved */
-      width: 200px; /* justér størrelsen så den er synlig */
-      left: 40%;
-      bottom: 60%;
-    }
-
-    .baggrundsblomst2 {
-      position: absolute;
-      z-index: 0; /* ikke -1, det kan være for langt bagved */
-      width: 200px; /* justér størrelsen så den er synlig */
-      left: -1%;
-      bottom: 25%;
-    }
 
     .grid_1-1 {
       position: relative;
       background-color: #f2efe8;
       overflow: hidden;
-    }
-
-    .baggrundsblomst3 {
-      position: absolute;
-      z-index: 0; /* ikke -1, det kan være for langt bagved */
-      width: 150px; /* justér størrelsen så den er synlig */
-      left: 30%;
-      bottom: 5%;
-    }
-
-    @media (min-width: 800px) {
-      .baggrundsblomst1 {
-        left: 86%;
-        bottom: 25%;
-      }
-
-      .baggrundsblomst2 {
-        left: 0%;
-        bottom: 45%;
-      }
     }
 
     h1 {
@@ -232,6 +175,17 @@ import Layout from "../layouts/Layout.astro";
 
     img {
       justify-content: center;
+    }
+
+    a:hover img {
+      transform: scale(1.03);
+      transition: transform 0.3s ease-in;
+    }
+
+    a:hover .hover_link {
+      color: var(--lightgreen);
+      text-decoration: underline;
+      transition: color 0.3s ease;
     }
 
     @media (min-width: 800px) {
@@ -345,19 +299,15 @@ import Layout from "../layouts/Layout.astro";
     } */
 
     /* v-------------- HOVER EFFEKT PÅ LINKS --------------v */
-    a {
+    /* a {
       display: block;
-      overflow: hidden; /* skjul det forstørrede billede */
+      overflow: hidden; 
       z-index: 1;
     }
 
     a img {
       transition: transform 0.3s ease;
-    }
-
-    a:hover img {
-      transform: scale(1.05); /* zoomer 5% ind */
-    }
+    } */
 
     /* _sleet */
     body {
