@@ -67,7 +67,6 @@ import Layout from "../layouts/Layout.astro";
         />
       </div>
     </div>
-
     <div class="lightgreen grid_1-1">
       <div class="gaardblomstens_vejbod">
         <h1><span>Gaardblomstens</span> vejbod</h1>
@@ -175,8 +174,10 @@ import Layout from "../layouts/Layout.astro";
     overflow-y: hidden;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1038px) {
     .flex {
+      /* display: grid;
+      grid-template-columns: 1fr 1fr 1fr; */
       justify-content: center;
       gap: 50px;
     }
@@ -211,7 +212,7 @@ import Layout from "../layouts/Layout.astro";
     object-fit: cover;
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1038x) {
     .img_fotokarrusel {
       max-width: none;
       max-height: none;
