@@ -230,24 +230,25 @@ import Layout from "../layouts/Layout.astro";
         max-width: var(--global-margin-max-width);
       }
       .grid_1-1 {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
         background-color: var(--lightgreen);
       }
 
       .grid_1-1 > .maria {
         /* width: 50vw; fylder halvdelen af skærmen */
-        height: auto;
+        /* height: auto; */
         object-fit: cover;
         margin-left: 0;
-        width: 100%;
+        /* width: 100%; */
+        height: 100%;
         max-width: none;
         display: block;
       }
 
       .grid_1-1 > div {
-        max-width: 50%; /* halvdelen af din main */
+        /* max-width: 50%; halvdelen af din main */
       }
 
       .grid_1-1 {
