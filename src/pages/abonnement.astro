@@ -7,18 +7,13 @@ import Layout from "../layouts/Layout.astro";
     <section class="hero">
       <img
         src="/webp/hero_abonnement.webp"
+        width="749"
+        height="256"
         alt="billede af blomsterbuket på en bænk"
       />
-      <!-- <p class="p_hero">
-        <strong>
-          Et abonnement er en perfekt måde at skabe en dejlig stemning i dit
-          hjem, i din virksomhed eller give i gave til en, der står dig nær.
-        </strong>
-      </p> -->
-      <!-- <a class="a_hero" href="">Start abonnement</a> -->
     </section>
     <section class="step_by_step">
-      <h1>Sådan fungerer det</h1>
+      <h1>Sådan fungerer abonnement</h1>
       <p class="obs">
         OBS: Da blomsterne kommer fra egen gård, er abonnementer kun mulige fra
         juli til august
@@ -90,6 +85,8 @@ import Layout from "../layouts/Layout.astro";
       <img
         class="abonnement_billed"
         src="/webp/abonnement.webp"
+        width="749"
+        height="751"
         alt="billede af Maria der plukker blomster"
       />
       <div class="down_section">
@@ -216,6 +213,7 @@ import Layout from "../layouts/Layout.astro";
     border: none;
     color: var(--grey);
     font-family: var(--font-p);
+    border: 1px solid var(--darkgreen);
   }
 
   select {
@@ -224,30 +222,13 @@ import Layout from "../layouts/Layout.astro";
     border: none;
     color: var(--grey);
     font-family: var(--font-p);
+    border: 1px solid var(--darkgreen);
   }
 
   .andet {
     padding: 10px 0 50px 10px;
     min-width: 250px;
   }
-
-  /* .bestilling {
-    color: var(--beige);
-    text-decoration: none;
-    background-color: var(--rosa);
-    padding: 10px;
-    text-align: center;
-    font-family: var(--font-p);
-    padding: 5px 10px 5px 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 60px;
-  }
-
-  a:hover {
-    background-color: var(--darkgreen);
-  } */
 
   .bestilling {
     color: var(--beige);
