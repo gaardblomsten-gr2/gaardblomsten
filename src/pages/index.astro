@@ -195,7 +195,7 @@ import Layout from "../layouts/Layout.astro";
       transition: color 0.3s ease;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 1000px) {
       .grid_1-1-1 {
         gap: 10px;
         margin-left: 80px;
@@ -206,8 +206,6 @@ import Layout from "../layouts/Layout.astro";
     /* v--------------  STYLING AF 'om Gaardblomsten'--------------v */
     .grid_1-1 {
       display: grid;
-      /* grid-template-rows: 1fr 1fr; */
-      gap: 20px;
       background-color: var(--lightgreen);
     }
     .grid_1-1 > .maria {
@@ -222,7 +220,7 @@ import Layout from "../layouts/Layout.astro";
 
     /* overstående '.grid_1-1 > .maria' styling gør at billedet går helt ud til kanterne på mobilview  */
 
-    @media (min-width: 820px) {
+    @media (min-width: 1000px) {
       section {
         margin: 0 40px 0 40px;
       }
@@ -237,18 +235,11 @@ import Layout from "../layouts/Layout.astro";
       }
 
       .grid_1-1 > .maria {
-        /* width: 50vw; fylder halvdelen af skærmen */
-        /* height: auto; */
         object-fit: cover;
         margin-left: 0;
-        /* width: 100%; */
         height: 100%;
         max-width: none;
         display: block;
-      }
-
-      .grid_1-1 > div {
-        /* max-width: 50%; halvdelen af din main */
       }
 
       .grid_1-1 {
