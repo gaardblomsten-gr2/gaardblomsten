@@ -22,6 +22,7 @@ import Layout from "../layouts/Layout.astro";
           <li>- Priser fra 200 kr.</li>
           <li>- Gratis levering i 4622 Havdrup og 2680 Solrød Strand</li>
           <li>- Levering udenfor disse områder kan tilkøbes</li>
+          <li>- Friskhedsgaranti i 2 døgn</li>
         </ul>
         <p class="praktisk_info_beige">
           Send os en mail på <strong class="praktisk_info_beige"
@@ -32,6 +33,8 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <img
         class="bestilling_img"
+        width="749"
+        height="645"
         src="/webp/bestilling-short.webp"
         alt="billede af buket på bænk"
       />
@@ -41,9 +44,27 @@ import Layout from "../layouts/Layout.astro";
 
     <div class="gallery">
       <div class="flex">
-        <img class="img_fotokarrusel" src="/webp/buket1.webp" alt="billede3" />
-        <img class="img_fotokarrusel" src="/webp/buket2.webp" alt="billede4" />
-        <img class="img_fotokarrusel" src="/webp/buket3.webp" alt="billede5" />
+        <img
+          class="img_fotokarrusel"
+          src="/webp/buket1.webp"
+          width="281"
+          height="375"
+          alt="billede3"
+        />
+        <img
+          class="img_fotokarrusel"
+          src="/webp/buket2.webp"
+          width="281"
+          height="375"
+          alt="billede4"
+        />
+        <img
+          class="img_fotokarrusel"
+          src="/webp/buket3.webp"
+          width="281"
+          height="375"
+          alt="billede5"
+        />
       </div>
     </div>
 
@@ -77,6 +98,8 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <img
         src="/webp/vejbod.webp"
+        width="749"
+        height="748"
         alt="billede af maria på vej ind i sin vejbog med blomster over skulderen"
       />
     </div>
@@ -188,11 +211,6 @@ import Layout from "../layouts/Layout.astro";
     object-fit: cover;
   }
 
-  /* .img_fotokarrusel {
-    max-width: 350px;
-    max-height: 261px;
-  } */
-
   @media (min-width: 800px) {
     .img_fotokarrusel {
       max-width: none;
@@ -257,15 +275,6 @@ import Layout from "../layouts/Layout.astro";
     /* så billedet fylder halvdelen af min main */
     .grid_1-1 > bestilling {
       max-width: 50%; /* halvdelen af din main */
-    }
-    .grid_1-1 {
-      /* position: relative; */
-      /* left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      width: 100vw; */
-      /* background-color: var(--lightgreen); */
     }
 
     /* for at få billede til venstre på desktop, lav om på orderen */
